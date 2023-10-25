@@ -1,42 +1,47 @@
+# Gradle
+build
 .gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
+# Eclispe
+bin
+.project
+.classpath
+.settings
+.metadata
+
+# Intellij
+out
+.idea
 *.iml
 *.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+*.iws
+atlassian-ide-plugin.xml
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+# NetBeans
+.nbattrs
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
+# virtual machine crash logs
+hs_err_pid*
+
+# Backup files
+*.sw[nop]
+*~
+.#*
+[#]*#
+
+# dotenv or direnv
+.env
+.envrc
+
+# Miscellaneous
+*.log
+.clover
+.DS_Store
+
+# Profiler and heap dumps
+*.jps
+*.hprof
 /.nb-gradle/
 
-### VS Code ###
-.vscode/
-
-### Mac OS ###
-.DS_Store
+# JavaScript
+node_modules

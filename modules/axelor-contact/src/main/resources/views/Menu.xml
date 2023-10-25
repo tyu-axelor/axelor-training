@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <menuitem name="menu-contact-book"
+              title="Address Book" />
+
+    <menuitem name="menu-contact-friends"
+              parent="menu-contact-book"
+              title="All Contact"
+              action="contact.all"/>
+
+    <action-view name="contact.all"
+                 title="Contacts"
+                 model="com.axelor.apps.contact.db.Contact">
+        <view type="grid" name="contact-grid"/>
+        <view type="form" name="contact-form"/>
+    </action-view>
+
+</object-views>

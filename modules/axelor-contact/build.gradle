@@ -1,0 +1,11 @@
+plugins {
+    id 'com.axelor.app'
+}
+
+axelor {
+    title = "Axelor Contact"
+}
+
+dependencies {
+
+}

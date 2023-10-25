@@ -3,11 +3,12 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://axelor.com/xml/ns/domain-models https://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
 
-    <module name="contact" package="com.axelor.apps.contact.db"/>
+    <module name="sales" package="com.axelor.apps.sales.db"/>
 
-    <entity name="Country">
-        <string name="code" title="Code" required="true" unique="true" min="2" />
-        <string name="name" title="Name" required="true" min="2" />
+    <entity name="Product">
+        <string name="name" title="Name" required="true" min="2"/>
+        <string name="code" title="Code" required="true" unique="true" min="2"/>
+        <decimal name="unitPrice" title="Unit Price" scale="2" />
     </entity>
 
 </domain-models>
