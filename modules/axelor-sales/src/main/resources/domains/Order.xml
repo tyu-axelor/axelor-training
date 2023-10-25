@@ -11,7 +11,8 @@
         <date name="confirmationDate" title="Confirmation date"/>
         <decimal name="exTaxTotal" title="Total without tax" scale="2"/>
         <decimal name="total" title="Total" scale="2"/>
-        <one-to-many name="orderLineList" ref=""
+        <one-to-many name="orderLineList" ref="com.axelor.apps.sale.db.OrderLine" title="Order lines" mappedBy="order"/>
+        <integer name="stateSelect" title="State" />
     </entity>
 
 </domain-models>
