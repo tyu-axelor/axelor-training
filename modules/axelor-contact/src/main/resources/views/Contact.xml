@@ -15,6 +15,8 @@
     <form name="contact-form"
           title="Contact"
           model="com.axelor.apps.contact.db.Contact">
+
+
         <panel name="overviewPanel" title="Contact Overview">
             <field name="fullName" readonly="false">
                 <editor>
@@ -23,29 +25,57 @@
                     <field name="lastName" colSpan="5"/>
                 </editor>
             </field>
+
+
+
             <field name="dateOfBirth" />
+
             <field name="email">
                 <viewer><![CDATA[
-        <a href="mailto:{{record.email}}">{{record.email}}</a>
-        ]]></viewer>
+                        <a href="mailto:{{record.email}}">{{record.email}}</a>
+            ]]></viewer>
             </field>
+
             <field name="phone">
                 <viewer><![CDATA[
         <a href="tel:{{record.phone}}">{{record.phone}}</a>
         ]]></viewer>
+
             </field>
         </panel>
-        <panel name="aboutMePanel" title="About me">
-            <field name="notes" showTitle="false" colSpan="12"/>
+
+        <panel name="addressPanel" title="Address" colSpan="16">
+            <field name="address" title="Address Information" colSpan="16">
+                <editor>
+
+                    <field name="street" colSpan="3"/>
+                    <field name="zip" colSpan="3"/>
+                    <field name="city" colSpan="3"/>
+                    <field name="country" colSpan="3"/>
+
+                </editor>
+            </field>
         </panel>
-        <panel-related name="addressPanel" field="address" form-view="address-form-popup">
-            <field name="street"/>
-            <field name="area"/>
-            <field name="city"/>
-            <field name="state"/>
-            <field name="zip"/>
-            <field name="country"/>
-        </panel-related>
+
+
+<!--        <panel name="aboutMePanel" title="About me">-->
+<!--            <field name="notes" showTitle="false" colSpan="12"/>-->
+<!--        </panel>-->
+
+<!--        <panel name="addressPanel" title="Address">-->
+<!--            <field name="street"/>-->
+<!--            <field name="zip" />-->
+<!--            <field name="city" />-->
+<!--            <field name="country" />-->
+
+<!--        </panel>-->
+<!--        <panel-related name="addressListPanel" field="addressList" form-view="address-form-popup">-->
+<!--&lt;!&ndash;            <field name="street"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <field name="city"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <field name="zip"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <field name="country"/>&ndash;&gt;-->
+<!--        </panel-related>-->
+
         <panel name="sidePanel" sidebar="true">
             <field name="createdOn"/>
             <field name="createdBy"/>
@@ -54,18 +84,16 @@
         </panel>
     </form>
 
-    <form name="address-form-popup"
-          title="Address"
-          model="com.axelor.apps.contact.db.Address"
-          >
-        <panel title="Overview" >
-            <field name="street"/>
-            <field name="area"/>
-            <field name="city"/>
-            <field name="zip"/>
-            <field name="state"/>
-            <field name="country"/>
-        </panel>
-    </form>
+<!--    <form name="address-form-popup"-->
+<!--          title="Address"-->
+<!--          model="com.axelor.apps.contact.db.Address"-->
+<!--          >-->
+<!--        <panel title="Overview" >-->
+<!--            <field name="street"/>-->
+<!--            <field name="city"/>-->
+<!--            <field name="zip"/>-->
+<!--            <field name="country"/>-->
+<!--        </panel>-->
+<!--    </form>-->
 
 </object-views>

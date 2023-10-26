@@ -6,12 +6,12 @@
     <module name="sales" package="com.axelor.apps.sales.db"/>
 
     <entity name="Order">
-        <one-to-one name="customer" ref="com.axelor.apps.contact.db.Contact" title="Customer" readonly="true"/>
+<!--        <one-to-one name="customer" ref="com.axelor.apps.contact.db.Contact" title="Customer" readonly="true"/>-->
         <date name="orderDate" title="Order's date" required="true" />
         <date name="confirmationDate" title="Confirmation date"/>
-        <decimal name="exTaxTotal" title="Total without tax" scale="2"/>
-        <decimal name="total" title="Total" scale="2"/>
-        <one-to-many name="orderLineList" ref="com.axelor.apps.sale.db.OrderLine" title="Order lines" mappedBy="order"/>
+        <decimal name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>
+        <decimal name="total" title="Total" precision="10" scale="2"/>
+<!--        <one-to-many name="orderLineList" ref="com.axelor.apps.sale.db.OrderLine" title="Order lines" mappedBy="order"/>-->
         <integer name="stateSelect" title="State" />
     </entity>
 
