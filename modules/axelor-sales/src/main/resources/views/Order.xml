@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <grid  name="sales-order-grid"
+           title="Sales orders"
+           model="com.axelor.apps.sales.db.Order">
+        <field name="customer"/>
+        <field name="orderDate"/>
+    </grid>
+
+    <form name="sales-order-form"
+          title="Sale order"
+          model="com.axelor.apps.sales.db.Order">
+        <panel name="customerInfoPanel"
+               title="Customer Information"
+               colSpan="16">
+            <field name="customer" colSpan="16">
+                <editor>
+                    <field name="fullName" title="Full Name" colSpan="3"></field>
+                    <field name="email" title="Email" colSpan="3"></field>
+                    <field name="phone" title="Phone" colSpan="3"></field>
+                    <field name="address" title="Address" colSpan="3"></field>
+
+                </editor>
+            </field>
+            <field name="orderDate" title="Order's Date"/>
+
+
+        </panel>
+        <panel name="sidePanel" sidebar="true">
+            <field name="createdOn"/>
+            <field name="createdBy"/>
+            <field name="updatedOn"/>
+            <field name="updatedBy"/>
+        </panel>
+    </form>
+</object-views>

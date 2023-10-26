@@ -7,6 +7,19 @@
 
     <entity name="OrderLine">
 
+        <many-to-one name="orders" ref="com.axelor.apps.sales.db.Order" title="Order"/>
+
+        <one-to-one name="product" title="Product" ref="com.axelor.apps.sales.db.Product" required="true"/>
+
+        <string name="description" title="Description"/>
+
+        <decimal name="qty" title="Quantity" precision="10" scale="2"/>
+        <decimal name="unitPrice" title="Unit Price" precision="10" scale="2"/>
+        <decimal name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>
+        <decimal name="taxRate" title="Tax Rate" precision="10" scale="2"/>
+        <decimal name="total" title="Total" precision="10" scale="2"/>
+
+
     </entity>
 
 </domain-models>

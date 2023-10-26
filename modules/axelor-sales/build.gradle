@@ -7,5 +7,5 @@ axelor {
 }
 
 dependencies {
-
+    api project(":modules:axelor-contact")
 }

@@ -6,13 +6,20 @@
     <module name="sales" package="com.axelor.apps.sales.db"/>
 
     <entity name="Order">
-<!--        <one-to-one name="customer" ref="com.axelor.apps.contact.db.Contact" title="Customer" readonly="true"/>-->
-        <date name="orderDate" title="Order's date" required="true" />
+        <many-to-one name="customer" ref="com.axelor.apps.contact.db.Contact" title="Customer" required="true"/>
+        <date name="orderDate" title="Order's date" required="true" >
+            <![CDATA[
+            return java.time.LocalDate.now();
+  ]]>
+        </date>
         <date name="confirmationDate" title="Confirmation date"/>
         <decimal name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>
         <decimal name="total" title="Total" precision="10" scale="2"/>
-<!--        <one-to-many name="orderLineList" ref="com.axelor.apps.sale.db.OrderLine" title="Order lines" mappedBy="order"/>-->
+
+        <one-to-many name="orderLineList" ref="com.axelor.apps.sales.db.OrderLine" title="Order lines" mappedBy="orders"/>
+
         <integer name="stateSelect" title="State" />
+
     </entity>
 
 </domain-models>
