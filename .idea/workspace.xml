@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Order.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/views/Address.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/views/Country.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/views/Title.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/domains/Contact.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/domains/Contact.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/views/Contact.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/views/Contact.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/views/Menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/views/Menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Order.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/OrderLine.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/OrderLine.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Product.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +230,7 @@
       <workItem from="1698257686038" duration="2715000" />
       <workItem from="1698261452267" duration="3985000" />
       <workItem from="1698266646340" duration="2713000" />
-      <workItem from="1698324338857" duration="19976000" />
+      <workItem from="1698324338857" duration="24902000" />
     </task>
     <servers />
   </component>

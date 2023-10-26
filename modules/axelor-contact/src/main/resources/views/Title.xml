@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <grid name="title-grid"
+          title="Titles"
+          model="com.axelor.apps.contact.db.Title">
+        <field name="code" title="Code" min="2" required="true" />
+        <field name="name" title="Name" min="2" required="true" />
+    </grid>
+
+    <form name="title-form"
+          title="Title"
+          model="com.axelor.apps.contact.db.Title">
+
+        <panel name="overviewPanel" title="Title Overview">
+
+            <field name="code" title="Code" min="2" required="true"/>
+            <field name="name" title="Name" min="2" required="true"/>
+
+        </panel>
+    </form>
+
+
+
+</object-views>

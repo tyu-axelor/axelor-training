@@ -9,7 +9,7 @@
         <many-to-one name="title" title="Title" ref="com.axelor.apps.contact.db.Title" />
         <string name="lastName" title="Last Name" required="true"/>
         <string name="firstName" title="First Name" required="true"/>
-        <string name="fullName" namecolumn="true" search="title, firstName, lastName">
+        <string name="fullName" namecolumn="true" search="title,firstName,lastName">
             <![CDATA[
             if (firstName == null && lastName == null)
                 return null;

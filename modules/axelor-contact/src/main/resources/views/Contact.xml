@@ -7,7 +7,7 @@
           title="Contacts"
           model="com.axelor.apps.contact.db.Contact">
         <field name="fullName" />
-        <field name="email" widget="email"/>
+        <field name="email"/>
         <field name="phone" />
         <field name="dateOfBirth" />
     </grid>
@@ -15,28 +15,32 @@
     <form name="contact-form"
           title="Contact"
           model="com.axelor.apps.contact.db.Contact">
+<!--        <panel name="picturePanel">-->
+<!--            <field name="picture" title="Photo"/>-->
+<!--        </panel>-->
 
 
         <panel name="overviewPanel" title="Contact Overview">
-            <field name="fullName" readonly="false">
-                <editor>
-                    <field name="title" colSpan="3"/>
-                    <field name="firstName" colSpan="4"/>
-                    <field name="lastName" colSpan="5"/>
-                </editor>
-            </field>
+            <field name="picture" title="Photo" widget="image"/>
+            <field name="fullName" />
+<!--                <editor>-->
+            <field name="title" colSpan="3" grid-view="title-grid" form-view="title-form"/>
+            <field name="firstName" colSpan="4"/>
+            <field name="lastName" colSpan="5"/>
+<!--                </editor>-->
+
 
 
 
             <field name="dateOfBirth" />
 
-            <field name="email">
+            <field name="email" widget="email">
                 <viewer><![CDATA[
                         <a href="mailto:{{record.email}}">{{record.email}}</a>
             ]]></viewer>
             </field>
 
-            <field name="phone">
+            <field name="phone" widget="phone">
                 <viewer><![CDATA[
         <a href="tel:{{record.phone}}">{{record.phone}}</a>
         ]]></viewer>
@@ -45,7 +49,7 @@
         </panel>
 
         <panel name="addressPanel" title="Address" colSpan="16">
-            <field name="address" title="Address Information" colSpan="16">
+            <field name="address" title="Address Information" colSpan="16" form-view="address-form" grid-view="address-grid">
                 <editor>
 
                     <field name="street" colSpan="3"/>
@@ -76,12 +80,12 @@
 <!--&lt;!&ndash;            <field name="country"/>&ndash;&gt;-->
 <!--        </panel-related>-->
 
-        <panel name="sidePanel" sidebar="true">
-            <field name="createdOn"/>
-            <field name="createdBy"/>
-            <field name="updatedOn"/>
-            <field name="updatedBy"/>
-        </panel>
+<!--        <panel name="sidePanel" sidebar="true">-->
+<!--            <field name="createdOn"/>-->
+<!--            <field name="createdBy"/>-->
+<!--            <field name="updatedOn"/>-->
+<!--            <field name="updatedBy"/>-->
+<!--        </panel>-->
     </form>
 
 <!--    <form name="address-form-popup"-->

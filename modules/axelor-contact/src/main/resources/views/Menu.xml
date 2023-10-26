@@ -2,20 +2,49 @@
 <object-views xmlns="http://axelor.com/xml/ns/object-views"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
-
-    <menuitem name="menu-contact-book"
+<!--    menuItems for Contact-->
+    <menuitem name="menu-contact-root"
               title="Contact" />
 
     <menuitem name="menu-contact-friends"
-              parent="menu-contact-book"
+              parent="menu-contact-root"
               title="All Contacts"
               action="contact.all"/>
+
+
+
+    <menuitem name="menu-contact-titles" title="All Titles" parent="menu-contact-root" action="title.all"/>
+
+    <menuitem name="menu-contact-addresses" title="All Addresses" parent="menu-contact-root" action="address.all"/>
+
+    <menuitem name="menu-contact-countries" title="All Countries" parent="menu-contact-root" action="country.all"/>
 
     <action-view name="contact.all"
                  title="Contacts"
                  model="com.axelor.apps.contact.db.Contact">
         <view type="grid" name="contact-grid"/>
         <view type="form" name="contact-form"/>
+    </action-view>
+
+    <action-view name="title.all"
+                 title="Titles"
+                 model="com.axelor.apps.contact.db.Title">
+        <view type="grid" name="title-grid"/>
+        <view type="form" name="title-form"/>
+    </action-view>
+
+    <action-view name="address.all"
+                 title="Addresses"
+                 model="com.axelor.apps.contact.db.Address">
+        <view type="grid" name="address-grid"/>
+        <view type="form" name="address-form"/>
+    </action-view>
+
+    <action-view name="country.all"
+                 title="Countries"
+                 model="com.axelor.apps.contact.db.Country">
+        <view type="grid" name="country-grid"/>
+        <view type="form" name="country-form"/>
     </action-view>
 
 </object-views>
