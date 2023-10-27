@@ -3,15 +3,16 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
-    <grid  name="sales-order-grid"
+    <grid  name="sales-orders-grid"
            title="Sales orders"
            model="com.axelor.apps.sales.db.Order">
-        <field name="customer"/>
-        <field name="orderDate"/>
+        <field name="customer" grid-view="contact-grid" form-view="contact-form"/>
+        <field name="orderDate" title="Order's date" required="true"/>
+        <field name="confirmationDate" title="Confirmation date"/>
     </grid>
 
-    <form name="sales-order-form"
-          title="Sale order"
+    <form name="sales-orders-form"
+          title="Sales orders"
           model="com.axelor.apps.sales.db.Order">
         <panel name="customerInfoPanel"
                title="Customer Information"
@@ -25,7 +26,15 @@
 
                 </editor>
             </field>
-            <field name="orderDate" title="Order's Date"/>
+            <field name="orderDate" title="Order's Date" required="true"/>
+            <field name="confirmationDate" title="Confirmation date"/>
+            <field name="stateSelect" title="State"/>
+            <button name="validate" onClick="" title="Validate" />
+            <button name="compute" onClick="" title="Compute" />
+            <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" />
+            <field name="total" title="Total" precision="10" scale="2"/>
+
+            <field name="orderLineList" title="Order lines" form-view="sales-orderLine-form" grid-view="sales-orderLine-grid"/>
 
 
         </panel>

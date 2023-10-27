@@ -11,11 +11,36 @@
               title="All Sales Orders"
               action="sales.root.sales.orders"/>
 
+    <menuitem name="sales-root-sales-product"
+              parent="sales-root-sales"
+              title="All Products"
+              action="sales.root.sales.product"/>
+
+    <menuitem name="sales-root-sales-orderLine"
+              parent="sales-root-sales"
+              title="All Order Lines"
+              action="sales.root.sales.orderLine"/>
+
+
     <action-view name="sales.root.sales.orders"
                  title="Sales orders"
                  model="com.axelor.apps.sales.db.Order">
-        <view type="grid" name="sales-order-grid"/>
-        <view type="form" name="sales-order-form"/>
+        <view type="grid" name="sales-orders-grid"/>
+        <view type="form" name="sales-orders-form"/>
+    </action-view>
+
+    <action-view name="sales.root.sales.product"
+                 title="Products"
+                 model="com.axelor.apps.sales.db.Product">
+        <view type="grid" name="sales-product-grid"/>
+        <view type="form" name="sales-product-form"/>
+    </action-view>
+
+    <action-view name="sales.root.sales.orderLine"
+                 title="Order Lines"
+                 model="com.axelor.apps.sales.db.OrderLine">
+        <view type="grid" name="sales-orderLine-grid"/>
+        <view type="form" name="sales-orderLine-form"/>
     </action-view>
 
 </object-views>

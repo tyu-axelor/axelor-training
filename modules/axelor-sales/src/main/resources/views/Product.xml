@@ -3,7 +3,7 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
-    <grid name="product-grid"
+    <grid name="sales-product-grid"
           title="Products"
           model="com.axelor.apps.sales.db.Product">
         <field name="name" title="Name" required="true" min="2"/>
@@ -11,7 +11,7 @@
         <field name="unitPrice" title="Unit Price"/>
     </grid>
 
-    <form name="product-form"
+    <form name="sales-product-form"
           title="Products"
           model="com.axelor.apps.sales.db.Product">
 
