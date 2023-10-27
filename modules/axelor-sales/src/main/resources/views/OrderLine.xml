@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <grid name="orderLine-grid"
+          title="Order Lines"
+          model="com.axelor.apps.sales.db.OrderLine">
+        <field name="orders" title="Order" />
+        <field name="product" title="Product" />
+        <field name="description" title="Description" />
+        <field name="qty" title="Quantity" precision="10" scale="2"/>
+        <field name="unitPrice" title="Unit Price" precision="10" scale="2"/>
+        <field name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>
+        <field name="taxRate" title="Tax Rate" precision="10" scale="2"/>
+        <field name="total" title="Total" precision="10" scale="2"/>
+
+
+    </grid>
+
+    <form name="orderLine-form"
+          title="Order Lines"
+          model="com.axelor.apps.sales.db.OrderLine">
+
+        <panel name="overviewPanel" title="Order Lines Overview">
+
+            <field name="orders" title="Order" />
+            <field name="product" title="Product" />
+            <field name="description" title="Description" />
+            <field name="qty" title="Quantity" precision="10" scale="2"/>
+            <field name="unitPrice" title="Unit Price" precision="10" scale="2"/>
+            <field name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>
+            <field name="taxRate" title="Tax Rate" precision="10" scale="2"/>
+            <field name="total" title="Total" precision="10" scale="2"/>
+
+        </panel>
+    </form>
+
+
+
+</object-views>
