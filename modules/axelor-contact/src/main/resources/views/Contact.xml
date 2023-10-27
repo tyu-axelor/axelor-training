@@ -40,6 +40,8 @@
             ]]></viewer>
             </field>
 
+            <!--    The viewer uses angular.js template to render the values.   -->
+
             <field name="phone" widget="phone">
                 <viewer><![CDATA[
         <a href="tel:{{record.phone}}">{{record.phone}}</a>

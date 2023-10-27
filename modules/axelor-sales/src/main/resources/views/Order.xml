@@ -14,27 +14,35 @@
     <form name="sales-orders-form"
           title="Sales orders"
           model="com.axelor.apps.sales.db.Order">
-        <panel name="customerInfoPanel"
-               title="Customer Information"
-               colSpan="16">
-            <field name="customer" colSpan="16">
-                <editor>
-                    <field name="fullName" title="Full Name" colSpan="3"></field>
-                    <field name="email" title="Email" colSpan="3"></field>
-                    <field name="phone" title="Phone" colSpan="3"></field>
-                    <field name="address" title="Address" colSpan="3"></field>
+        <panel name="orderInfoPanel"
+               title="Order Information"
+               colSpan="12">
 
-                </editor>
-            </field>
-            <field name="orderDate" title="Order's Date" required="true"/>
-            <field name="confirmationDate" title="Confirmation date"/>
-            <field name="stateSelect" title="State"/>
-            <button name="validate" onClick="" title="Validate" />
-            <button name="compute" onClick="" title="Compute" />
-            <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" />
-            <field name="total" title="Total" precision="10" scale="2"/>
 
-            <field name="orderLineList" title="Order lines" form-view="sales-orderLine-form" grid-view="sales-orderLine-grid"/>
+                <button name="validate" onClick="" title="Validate" colSpan="6"/>
+                <button name="compute" onClick="" title="Compute" colSpan="6"/>
+
+
+                <field name="customer" colSpan="12">
+                    <editor>
+                        <field name="fullName" title="Full Name" colSpan="3"></field>
+                        <field name="email" title="Email" colSpan="3"></field>
+                        <field name="phone" title="Phone" colSpan="3"></field>
+                        <field name="address" title="Address" colSpan="3"></field>
+
+                    </editor>
+                </field>
+
+
+                <field name="orderDate" title="Order's Date" required="true"/>
+                <field name="confirmationDate" title="Confirmation date"/>
+                <field name="stateSelect" title="State"/>
+
+                <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" />
+                <field name="total" title="Total" precision="10" scale="2"/>
+
+                <field name="orderLineList" title="Order lines" form-view="sales-orderLine-form" grid-view="sales-orderLine-grid"/>
+
 
 
         </panel>

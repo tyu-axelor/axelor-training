@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Order.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/views/Contact.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/views/Contact.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/OrderLine.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/OrderLine.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Product.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Order.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/OrderLine.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/OrderLine.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Product.xml" afterDir="false" />
@@ -72,7 +72,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "/home/teng/Documents/Projects/axelor-training",
+    "last_opened_file_path": "/home/teng/Documents/repo/open-suite-webapp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -230,7 +230,7 @@
       <workItem from="1698261452267" duration="3985000" />
       <workItem from="1698266646340" duration="2713000" />
       <workItem from="1698324338857" duration="25145000" />
-      <workItem from="1698413308212" duration="8028000" />
+      <workItem from="1698413308212" duration="15268000" />
     </task>
     <servers />
   </component>

@@ -17,9 +17,9 @@
 
         <panel name="overviewPanel" title="Product Overview">
 
-            <field name="name" title="Name" required="true" min="2"/>
-            <field name="code" title="Code" required="true" min="2"/>
-            <field name="unitPrice" title="Unit Price"/>
+            <field name="name" title="Name" required="true" min="2" colSpan="4"/>
+            <field name="code" title="Code" required="true" min="2" colSpan="4"/>
+            <field name="unitPrice" title="Unit Price" colSpan="4" />
 
         </panel>
     </form>
