@@ -9,7 +9,7 @@
 
         <many-to-one name="orders" ref="com.axelor.apps.sales.db.Order" title="Order"/>
 
-        <one-to-one name="product" title="Product" ref="com.axelor.apps.sales.db.Product" required="true" mappedBy="orderLine"/>
+        <many-to-one name="product" title="Product" ref="com.axelor.apps.sales.db.Product" required="true"/>
 
         <string name="description" title="Description"/>
 

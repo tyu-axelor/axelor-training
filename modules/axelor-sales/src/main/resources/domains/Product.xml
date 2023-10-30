@@ -9,8 +9,6 @@
         <string name="name" title="Name" required="true" min="2"/>
         <string name="code" title="Code" required="true" unique="true" min="2"/>
         <decimal name="unitPrice" title="Unit Price" precision="10" scale="2" />
-
-        <one-to-one name="orderLine" ref="com.axelor.apps.sales.db.OrderLine" title="Order Line" />
     </entity>
 
 

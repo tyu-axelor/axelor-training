@@ -8,10 +8,7 @@
     <entity name="Order">
         <many-to-one name="customer" ref="com.axelor.apps.contact.db.Contact" title="Customer" required="true"/>
         <date name="orderDate" title="Order's date" required="true" />
-<!--            <![CDATA[-->
-<!--            return java.time.LocalDate.now();-->
-<!--  ]]>-->
-<!--        </date>-->
+
         <date name="confirmationDate" title="Confirmation date"/>
         <decimal name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>
         <decimal name="total" title="Total" precision="10" scale="2"/>
