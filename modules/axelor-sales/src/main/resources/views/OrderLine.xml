@@ -6,7 +6,7 @@
     <grid name="sales-orderLine-grid"
           title="Order Lines"
           model="com.axelor.apps.sales.db.OrderLine">
-        <field name="orders" title="Order Number" grid-view="sales-orders-grid" form-view="sales-orders-form"/>
+<!--        <field name="orders" title="Order Number" grid-view="sales-orders-grid" form-view="sales-orders-form"/>-->
         <field name="product" title="Product" grid-view="sales-product-grid" form-view="sales-product-form"/>
         <field name="description" title="Description" />
         <field name="qty" title="Quantity" precision="10" scale="2"/>
@@ -25,7 +25,7 @@
 
         <panel name="overviewPanel" title="Order Lines Overview">
 
-            <field name="orders" title="Order Number" grid-view="sales-orders-grid" form-view="sales-orders-form" colSpan="12"/>
+<!--            <field name="orders" title="Order Number" grid-view="sales-orders-grid" form-view="sales-orders-form" colSpan="12"/>-->
             <field name="product" title="Product" grid-view="sales-product-grid" form-view="sales-product-form" colSpan="6" onChange="action-sales-orderLine-load-unitPrice,action-sales-orderLine-load-description"/>
             <field name="description" title="Description" colSpan="6"/>
             <field name="qty" title="Quantity" precision="10" scale="2" colSpan="6" onChange="action-sales-orderLine-compute-extaxtotal,action-sales-orderLine-compute-total"/>
@@ -41,7 +41,7 @@
     <grid name="sales-orderLine-orders-grid"
           title="Order Lines"
           model="com.axelor.apps.sales.db.OrderLine">
-        <field name="orders" title="Order Number" grid-view="sales-orders-grid" form-view="sales-orders-form"/>
+<!--        <field name="orders" title="Order Number" grid-view="sales-orders-grid" form-view="sales-orders-form"/>-->
         <field name="product" title="Product" grid-view="sales-product-grid" form-view="sales-product-form"/>
         <field name="description" title="Description" colSpan="6"/>
         <field name="qty" title="Quantity" precision="10" scale="2"/>

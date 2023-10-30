@@ -21,8 +21,8 @@
                colSpan="12">
 
 
-                <button name="validate" hideIf="stateSelect == 1" onClick="action-orders-validate" title="Validate" colSpan="6"/>
-                <button name="compute" onClick="action-orders-compute-extaxtotal-total" title="Compute" colSpan="6"/>
+                <button name="validate" hideIf="stateSelect == 1" onClick="action-orders-validate,save" title="Validate" colSpan="6"/>
+                <button name="compute" hideIf="stateSelect == 1" onClick="action-orders-compute-extaxtotal-total,save" title="Compute" colSpan="6"/>
 
 
                 <field name="customer" colSpan="12" form-view="contact-form" grid-view="contact-grid"/>
@@ -33,7 +33,7 @@
                 <field name="orderDate" title="Order's Date" required="true"/>
                 <field name="confirmationDate" title="Confirmation date"/>
                 <field name="stateSelect" title="Status" selection="sales.orders.status.select"
-                onChange="action-orders-status-validated-confirmdate"/>
+                onChange="action-orders-status-validated-confirmdate" widget="NavSelect" readonly="true"/>
 
                 <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" readonly="true"/>
                 <field name="total" title="Total" precision="10" scale="2" readonly="true"/>
