@@ -21,8 +21,8 @@
                colSpan="12">
 
 
-                <button name="validate" onClick="" title="Validate" colSpan="6"/>
-                <button name="compute" onClick="" title="Compute" colSpan="6"/>
+                <button name="validate" hideIf="stateSelect == 1" onClick="action-orders-validate" title="Validate" colSpan="6"/>
+                <button name="compute" onClick="action-orders-compute-extaxtotal-total" title="Compute" colSpan="6"/>
 
 
                 <field name="customer" colSpan="12" form-view="contact-form" grid-view="contact-grid"/>
@@ -32,10 +32,11 @@
 
                 <field name="orderDate" title="Order's Date" required="true"/>
                 <field name="confirmationDate" title="Confirmation date"/>
-                <field name="stateSelect" title="Status" readonly="true" selection="sales.orders.status.select"/>
+                <field name="stateSelect" title="Status" selection="sales.orders.status.select"
+                onChange="action-orders-status-validated-confirmdate"/>
 
-                <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" />
-                <field name="total" title="Total" precision="10" scale="2"/>
+                <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" readonly="true"/>
+                <field name="total" title="Total" precision="10" scale="2" readonly="true"/>
 
 
 
@@ -67,5 +68,23 @@
         <attribute for="stateSelect" name="value" expr="eval:0" />
     </action-attrs>
     
+    <action-record name="action-orders-compute-extaxtotal-total" model="com.axelor.apps.sales.db.Order">
+        <field name="exTaxTotal" expr="eval: orderLineList.exTaxTotal.sum()"/>
+        <field name="total" expr="eval: orderLineList.total.sum()"/>
+
+    </action-record>
+
+    <action-record name="action-orders-validate" model="com.axelor.apps.sales.db.Order">
+        <field name="exTaxTotal" expr="eval: orderLineList.exTaxTotal.sum()"/>
+        <field name="total" expr="eval: orderLineList.total.sum()"/>
+        <field name="stateSelect" expr="eval:1"/>
+        <field name="confirmationDate" expr="eval:__date__"/>
+    </action-record>
+
+<!--    <action-record name="action-orders-status-validated-confirmdate" model="com.axelor.apps.sales.db.Order">-->
+<!--        <field name="confirmationDate" expr="eval:__date__"/>-->
+<!--    </action-record>-->
+
+
 
 </object-views>

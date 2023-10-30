@@ -26,7 +26,7 @@
         <panel name="overviewPanel" title="Order Lines Overview">
 
             <field name="orders" title="Order Number" grid-view="sales-orders-grid" form-view="sales-orders-form" colSpan="12"/>
-            <field name="product" title="Product" grid-view="sales-product-grid" form-view="sales-product-form" colSpan="6" onChange="action-sales-orderLine-load-unitPrice"/>
+            <field name="product" title="Product" grid-view="sales-product-grid" form-view="sales-product-form" colSpan="6" onChange="action-sales-orderLine-load-unitPrice,action-sales-orderLine-load-description"/>
             <field name="description" title="Description" colSpan="6"/>
             <field name="qty" title="Quantity" precision="10" scale="2" colSpan="6" onChange="action-sales-orderLine-compute-extaxtotal,action-sales-orderLine-compute-total"/>
             <field name="unitPrice" title="Unit Price" precision="10" scale="2" colSpan="6" readonly="true"/>
@@ -73,6 +73,12 @@
     <action-record name="action-sales-orderLine-compute-total" model="com.axelor.apps.sales.db.OrderLine">
 
         <field name="total" expr="eval: exTaxTotal * ( 1 + taxRate/100)"/>
+
+    </action-record>
+
+    <action-record name="action-sales-orderLine-load-description" model="com.axelor.apps.sales.db.OrderLine">
+
+        <field name="description" expr="eval: product.name"/>
 
     </action-record>
 
