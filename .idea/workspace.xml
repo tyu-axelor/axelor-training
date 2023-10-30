@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Selects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Order.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/OrderLine.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/OrderLine.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Product.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Order.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/OrderLine.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/OrderLine.xml" afterDir="false" />
     </list>
@@ -233,7 +229,8 @@
       <workItem from="1698324338857" duration="25145000" />
       <workItem from="1698413308212" duration="15547000" />
       <workItem from="1698672413965" duration="6035000" />
-      <workItem from="1698679845848" duration="3314000" />
+      <workItem from="1698679845848" duration="4475000" />
+      <workItem from="1698687446706" duration="5865000" />
     </task>
     <servers />
   </component>

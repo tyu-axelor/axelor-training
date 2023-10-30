@@ -15,6 +15,7 @@
           title="Sales orders"
           model="com.axelor.apps.sales.db.Order"
           onNew="action-orders-orderDate-date-default">
+
         <panel name="orderInfoPanel"
                title="Order Information"
                colSpan="12">
@@ -45,7 +46,8 @@
         <panel name="contentPanel" title="Content" >
             <panel-related name="detailLinesPanel" title="Details Lines" field="orderLineList"
                            grid-view="sales-orderLine-orders-grid" form-view="sales-orderLine-form"
-                           colSpan="12"/>
+                           colSpan="12"
+            />
 
 <!--            <field name="orderLineList" title="Details Lines"-->
 <!--                   form-view="sales-orderLine-form" grid-view="sales-orderLine-orders-grid"-->
@@ -64,4 +66,6 @@
         <attribute for="orderDate" name="value" expr="eval:__date__"/>
         <attribute for="stateSelect" name="value" expr="eval:0" />
     </action-attrs>
+    
+
 </object-views>
