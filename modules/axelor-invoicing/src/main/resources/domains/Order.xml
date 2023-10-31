@@ -3,21 +3,21 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://axelor.com/xml/ns/domain-models https://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
 
-    <module name="invoicing" package="com.axelor.apps.invoicing.db"/>
+    <module name="sales" package="com.axelor.apps.sales.db"/>
 
-    <entity name="Invoice">
+    <entity name="Order">
         <many-to-one name="customer" ref="com.axelor.apps.contact.db.Contact" title="Customer" required="true"/>
-        <date name="invoiceDate" title="Date of Invoice"/>
-        <one-to-many name="invoiceLineList" ref="com.axelor.apps.invoicing.db.InvoiceLine" title="Invoice Lines"
-                     mappedBy="invoice"/>
+        <date name="orderDate" title="Order's date" required="true" />
 
-        <integer name="stateSelect" title="State"/>
-
+        <date name="confirmationDate" title="Confirmation date"/>
         <decimal name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>
         <decimal name="total" title="Total" precision="10" scale="2"/>
 
-        <one-to-one name="orders" ref="com.axelor.apps.sales.db.Order"/>
+        <one-to-many name="orderLineList" ref="com.axelor.apps.sales.db.OrderLine" title="Order lines" mappedBy="orders"/>
 
+        <integer name="stateSelect" title="State"/>
+
+        <one-to-one name="invoice" ref="com.axelor.apps.invoicing.db.Invoice" mappedBy="orders"/>
 
     </entity>
 
