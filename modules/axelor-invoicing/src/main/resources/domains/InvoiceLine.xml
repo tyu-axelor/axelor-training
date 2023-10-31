@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models https://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
+
+    <module name="invoicing" package="com.axelor.apps.invoicing.db"/>
+
+    <entity name="InvoiceLine">
+        <many-to-one name="invoice" ref="com.axelor.apps.invoicing.db.Invoice" title="Invoice"/>
+
+        <many-to-one name="product" ref="com.axelor.apps.sales.db.Product" title="Product"/>
+        <string name="description" title="Description"/>
+        <decimal name="qty" title="Qty" precision="10" scale="2"/>
+        <decimal name="unitPrice" title="Unit Price" precision="10" scale="2"/>
+        <decimal name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>
+        <decimal name="taxRate" title="Tax Rate" precision="10" scale="2"/>
+        <decimal name="total" title="Total" precision="10" scale="2"/>
+
+    </entity>
+
+</domain-models>

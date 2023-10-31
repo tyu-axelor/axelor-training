@@ -3,19 +3,19 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://axelor.com/xml/ns/domain-models https://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
 
-    <module name="sales" package="com.axelor.apps.sales.db"/>
+    <module name="invoicing" package="com.axelor.apps.invoicing.db"/>
 
-    <entity name="Order">
+    <entity name="Invoice">
         <many-to-one name="customer" ref="com.axelor.apps.contact.db.Contact" title="Customer" required="true"/>
-        <date name="orderDate" title="Order's date" required="true" />
+        <date name="invoiceDate" title="Date of Invoice"/>
+        <one-to-many name="invoiceLineList" ref="com.axelor.apps.invoicing.db.InvoiceLine" title="Invoice Lines"
+                     mappedBy="invoice"/>
 
-        <date name="confirmationDate" title="Confirmation date"/>
+        <integer name="stateSelect" title="State"/>
+
         <decimal name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>
         <decimal name="total" title="Total" precision="10" scale="2"/>
 
-        <one-to-many name="orderLineList" ref="com.axelor.apps.sales.db.OrderLine" title="Order lines" mappedBy="orders"/>
-
-        <integer name="stateSelect" title="State"/>
 
     </entity>
 
