@@ -29,7 +29,7 @@
         </panel>
 
         <panel name="contentPanel" title="Content">
-            <panel-related name="invoiceLinesDetailsPanel" title="Details Lines" field="invoiceLineList"
+            <panel-related name="invoiceLinesDetailsPanel" title="Invoice Lines" field="invoiceLineList"
                            grid-view="invoicing-invoiceLine-grid" form-view="invoicing-orderLine-form"
                            colSpan="12"/>
 
