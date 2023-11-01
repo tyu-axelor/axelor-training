@@ -1,8 +1,12 @@
 package com.axelor.apps.invoicing.web;
 
 import com.axelor.apps.invoicing.db.Invoice;
+import com.axelor.apps.invoicing.service.OrderService;
+import com.axelor.apps.sales.db.Order;
+import com.axelor.inject.Beans;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
+import com.axelor.rpc.Context;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,8 +24,21 @@ public class InvoiceController {
      * @param response
      */
     public void setInvoiceDateInitValue(ActionRequest request, ActionResponse response){
-        Invoice invoice = request.getContext().asType(Invoice.class);
+//        Invoice invoice = request.getContext().asType(Invoice.class);
         response.setValue("invoiceDate", java.time.LocalDate.now());
 //        response.setReload(true);
+    }
+
+    public void addInvoice(ActionRequest request, ActionResponse response){
+        Context ctx = request.getContext();
+        Order order = ctx.asType(Order.class);
+        System.out.println(order.getOrderLineList());
+
+        System.out.println("------");
+
+        OrderService orderService = Beans.get(OrderService.class);
+        Order orderAfterProcess = orderService.generateInvoiceForTheOrder(order);
+        System.out.println(orderAfterProcess);
+
     }
 }

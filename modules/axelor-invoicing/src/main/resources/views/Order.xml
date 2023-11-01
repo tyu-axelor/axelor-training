@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <grid  name="sales-orders-grid"
+           title="Sales orders"
+           model="com.axelor.apps.sales.db.Order">
+        <field name="customer" grid-view="contact-grid" form-view="contact-form"/>
+        <field name="orderDate" title="Order's date" required="true"/>
+        <field name="confirmationDate" title="Confirmation date"/>
+    </grid>
+
+    <form name="sales-orders-form" id="invoice-sales-orders-form"
+          title="Sales orders"
+          model="com.axelor.apps.sales.db.Order"
+          onNew="action-orders-orderDate-date-default">
+
+        <panel name="orderInfoPanel"
+               title="Order Information"
+               colSpan="12">
+
+
+            <button name="validate"  onClick="action-orders-validate,save" title="Validate" colSpan="4"/>
+            <button name="compute"  onClick="action-orders-compute-extaxtotal-total,save" title="Compute" colSpan="4"/>
+            <button name="invoice" onClick="action-invoicing-invoice-method-add-invoice" title="Invoice" colSpan="4"/>
+
+
+            <field name="customer" colSpan="12" form-view="contact-form" grid-view="contact-grid"/>
+
+
+
+
+            <field name="orderDate" title="Order's Date" required="true"/>
+            <field name="confirmationDate" title="Confirmation date"/>
+            <field name="stateSelect" title="Status" selection="sales.orders.status.select"
+                   onChange="action-orders-status-validated-confirmdate" widget="NavSelect" readonly="true"/>
+
+            <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" readonly="true"/>
+            <field name="total" title="Total" precision="10" scale="2" readonly="true"/>
+
+
+
+
+
+        </panel>
+
+        <panel name="contentPanel" title="Content" >
+            <panel-related name="detailLinesPanel" title="Details Lines" field="orderLineList"
+                           grid-view="sales-orderLine-orders-grid" form-view="sales-orderLine-form"
+                           colSpan="12"
+            />
+
+            <!--            <field name="orderLineList" title="Details Lines"-->
+            <!--                   form-view="sales-orderLine-form" grid-view="sales-orderLine-orders-grid"-->
+            <!--                   field="orderLineList" colSpan="12" target="com.axelor.apps.sales.db.OrderLine"/>-->
+        </panel>
+
+        <!--        <panel name="orderLinesPanel"-->
+        <!--               title="Order Lines"-->
+        <!--               >-->
+        <!--            <field name="orderLineList" form-view="sales-orderLine-form" grid-view="sales-orderLine-orders-grid" colSpan="12"/>-->
+        <!--        </panel>-->
+
+    </form>
+
+    <action-attrs name="action-orders-orderDate-date-default">
+        <attribute for="orderDate" name="value" expr="eval:__date__"/>
+        <attribute for="stateSelect" name="value" expr="eval:0" />
+    </action-attrs>
+
+    <action-record name="action-orders-compute-extaxtotal-total" model="com.axelor.apps.sales.db.Order">
+        <field name="exTaxTotal" expr="eval: orderLineList.exTaxTotal.sum()"/>
+        <field name="total" expr="eval: orderLineList.total.sum()"/>
+
+    </action-record>
+
+    <action-record name="action-orders-validate" model="com.axelor.apps.sales.db.Order">
+        <field name="exTaxTotal" expr="eval: orderLineList.exTaxTotal.sum()"/>
+        <field name="total" expr="eval: orderLineList.total.sum()"/>
+        <field name="stateSelect" expr="eval:1"/>
+        <field name="confirmationDate" expr="eval:__date__"/>
+    </action-record>
+
+    <!--    <action-record name="action-orders-status-validated-confirmdate" model="com.axelor.apps.sales.db.Order">-->
+    <!--        <field name="confirmationDate" expr="eval:__date__"/>-->
+    <!--    </action-record>-->
+
+    <action-method name="action-invoicing-invoice-method-add-invoice">
+        <call class="com.axelor.apps.invoicing.web.InvoiceController" method="addInvoice"/>
+    </action-method>
+
+</object-views>
