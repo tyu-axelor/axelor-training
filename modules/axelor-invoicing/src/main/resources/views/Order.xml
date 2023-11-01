@@ -32,12 +32,12 @@
 
             <field name="orderDate" title="Order's Date" required="true"/>
             <field name="confirmationDate" title="Confirmation date"/>
-            <field name="stateSelect" title="Status" selection="sales.orders.status.select"
-                   onChange="action-orders-status-validated-confirmdate" widget="NavSelect" readonly="true"/>
+
 
             <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" readonly="true"/>
             <field name="total" title="Total" precision="10" scale="2" readonly="true"/>
-
+            <field name="stateSelect" title="Status" selection="sales.orders.status.select"
+                   onChange="action-orders-status-validated-confirmdate" widget="NavSelect" readonly="true"/>
 
         </panel>
 
@@ -51,12 +51,13 @@
             <!--                   form-view="sales-orderLine-form" grid-view="sales-orderLine-orders-grid"-->
             <!--                   field="orderLineList" colSpan="12" target="com.axelor.apps.sales.db.OrderLine"/>-->
 
-
+            <field name="invoice" title="Invoice"/>
         </panel>
-        <panel name="invoicePanel" title="Invoice" field="invoice"
-               grid-view="invoicing-invoice-grid" form-view="invoicing-invoice-form"
-               colSpan="12"
-        />
+<!--        <panel name="invoicePanel" title="Invoice" grid-view="invoicing-invoice-grid" form-view="invoicing-invoice-form"-->
+<!--               colSpan="12"-->
+<!--        >-->
+<!--            -->
+<!--        </panel>-->
 
         <!--        <panel name="orderLinesPanel"-->
         <!--               title="Order Lines"-->
