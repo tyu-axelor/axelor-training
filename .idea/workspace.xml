@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/service/InvoiceLineService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/service/InvoiceLineServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/web/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/views/Selects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/views/Contact.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/views/Contact.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/service/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/module/InvoicingModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/module/InvoicingModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/web/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/web/InvoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/domains/Invoice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/domains/Invoice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/domains/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/domains/Order.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/views/Invoice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/views/Invoice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/views/InvoiceLine.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/views/InvoiceLine.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/views/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/views/Order.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/domains/Order.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Order.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +55,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -246,7 +256,7 @@
       <workItem from="1698787502159" duration="79000" />
       <workItem from="1698844043071" duration="1542000" />
       <workItem from="1698859570671" duration="13161000" />
-      <workItem from="1698929149542" duration="10279000" />
+      <workItem from="1698929149542" duration="23738000" />
     </task>
     <servers />
   </component>

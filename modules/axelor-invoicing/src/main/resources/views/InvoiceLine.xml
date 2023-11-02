@@ -25,30 +25,34 @@
         <panel name="overviewPanel" title="Invoice Line Overview">
 
             <!--            <field name="orders" title="Order Number" grid-view="sales-orders-grid" form-view="sales-orders-form" colSpan="12"/>-->
-            <field name="product" title="Product" grid-view="sales-product-grid" form-view="sales-product-form" colSpan="6"/>
-            <field name="description" title="Description" colSpan="6"/>
-            <field name="qty" title="Quantity" precision="10" scale="2" colSpan="6"/>
+            <field name="product" title="Product" grid-view="sales-product-grid" form-view="sales-product-form" colSpan="6"
+                   onChange="action-invoicing-invoiceLine-method-loadUnitPrice,action-invoicing-invoiceLine-method-loadDescription"/>
+            <field name="description" title="Description" colSpan="6" />
+            <field name="qty" title="Quantity" precision="10" scale="2" colSpan="6" onChange="action-invoicing-invoiceLine-method-computeExTaxTotal,action-invoicing-invoiceLine-method-computeTotal"/>
             <field name="unitPrice" title="Unit Price" precision="10" scale="2" colSpan="6" readonly="true"/>
-            <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" colSpan="3"/>
-            <field name="taxRate" title="Tax Rate" precision="10" scale="2" colSpan="3"/>
-            <field name="total" title="Total" precision="10" scale="2" colSpan="6"/>
+            <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" colSpan="3" readonly="true"/>
+            <field name="taxRate" title="Tax Rate" precision="10" scale="2" colSpan="3" onChange="action-invoicing-invoiceLine-method-computeTotal"/>
+            <field name="total" title="Total" precision="10" scale="2" colSpan="6" readonly="true"/>
 
 
         </panel>
     </form>
 
-<!--    <grid name="sales-orderLine-orders-grid"-->
-<!--          title="Order Lines"-->
-<!--          model="com.axelor.apps.sales.db.OrderLine">-->
-<!--        &lt;!&ndash;        <field name="orders" title="Order Number" grid-view="sales-orders-grid" form-view="sales-orders-form"/>&ndash;&gt;-->
-<!--        <field name="product" title="Product" grid-view="sales-product-grid" form-view="sales-product-form"/>-->
-<!--        <field name="description" title="Description" colSpan="6"/>-->
-<!--        <field name="qty" title="Quantity" precision="10" scale="2"/>-->
-<!--        <field name="unitPrice" title="Unit Price" precision="10" scale="2"/>-->
-<!--        <field name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>-->
-<!--        <field name="taxRate" title="Tax Rate" precision="10" scale="2" />-->
-<!--        <field name="total" title="Total" precision="10" scale="2"/>-->
 
+    <action-method name="action-invoicing-invoiceLine-method-loadUnitPrice">
+        <call class="com.axelor.apps.invoicing.web.InvoiceLineController" method="loadInvoiceLineUnitPrice"/>
+    </action-method>
 
-<!--    </grid>-->
+    <action-method name="action-invoicing-invoiceLine-method-loadDescription">
+        <call class="com.axelor.apps.invoicing.web.InvoiceLineController" method="loadInvoiceLineDescription"/>
+    </action-method>
+
+    <action-method name="action-invoicing-invoiceLine-method-computeExTaxTotal">
+        <call class="com.axelor.apps.invoicing.web.InvoiceLineController" method="computeInvoiceLineExTaxTotal"/>
+    </action-method>
+
+    <action-method name="action-invoicing-invoiceLine-method-computeTotal">
+        <call class="com.axelor.apps.invoicing.web.InvoiceLineController" method="computeInvoiceLineTotal"/>
+    </action-method>
+
 </object-views>

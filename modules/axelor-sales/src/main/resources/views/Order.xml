@@ -32,7 +32,7 @@
 
                 <field name="orderDate" title="Order's Date" required="true"/>
                 <field name="confirmationDate" title="Confirmation date"/>
-                <field name="stateSelect" title="Status" selection="sales.orders.status.select"
+                <field name="stateSelect" title="Order Status"
                 onChange="action-orders-status-validated-confirmdate" widget="NavSelect" readonly="true"/>
 
                 <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" readonly="true"/>

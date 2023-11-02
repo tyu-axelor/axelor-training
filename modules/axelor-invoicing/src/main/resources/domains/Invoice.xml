@@ -11,7 +11,7 @@
         <one-to-many name="invoiceLineList" ref="com.axelor.apps.invoicing.db.InvoiceLine" title="Invoice Lines"
                      mappedBy="invoice"/>
 
-        <integer name="stateSelect" title="State"/>
+        <integer name="stateSelect" title="State" selection="invoicing.orders.status.select"/>
 
         <decimal name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>
         <decimal name="total" title="Total" precision="10" scale="2"/>

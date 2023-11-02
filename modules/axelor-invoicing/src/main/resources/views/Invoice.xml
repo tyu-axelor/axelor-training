@@ -3,29 +3,34 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
-    <grid  name="invoicing-invoice-grid"
-           title="Invoices"
-           model="com.axelor.apps.invoicing.db.Invoice">
-<!--           canNew="false"-->
+    <grid name="invoicing-invoice-grid"
+          title="Invoices"
+          model="com.axelor.apps.invoicing.db.Invoice">
+        <!--           canNew="false"-->
 
         <field name="customer" grid-view="contact-grid" form-view="contact-form"/>
-        <field name="invoiceDate" title="Date of Invoice" />
+        <field name="invoiceDate" title="Date of Invoice"/>
 
     </grid>
 
     <form name="invoicing-invoice-form"
           title="Invoices"
           model="com.axelor.apps.invoicing.db.Invoice"
-    onNew="action-invoicing-invoice-method-init-invoiceDate">
+          onNew="action-invoicing-invoice-method-init-invoiceDate"
+          readonlyIf="stateSelect == 1">
 
         <panel name="invoiceInfoPanel" title="Invoice Information" colSpan="12">
-<!--            <button name="validate" onClick="" title="Validate" colSpan="6"/>-->
-<!--            <button name="compute" onClick="" title="Compute" colSpan="6"/>-->
+            <button name="validate" onClick="action-invoicing-invoice-method-setStateSelectToValidate,save"
+                    hideIf="stateSelect == 1" title="Validate" colSpan="6" selection="invoicing.orders.status.select"/>
+            <button name="compute"
+                    onClick="action-invoicing-invoice-method-computeExTaxTotal,action-invoicing-invoice-method-computeTotal,save"
+                    hideIf="stateSelect == 1" title="Compute" colSpan="6" selection="invoicing.orders.status.select"/>
             <field name="customer" colSpan="12" form-view="contact-form" grid-view="contact-grid"/>
             <field name="invoiceDate" title="Date of Invoice"/>
-<!--            <field name="stateSelect" title="Status" selection="sales.orders.status.select" widget="NavSelect" />-->
-            <field name="exTaxTotal" title="Total without tax" precision="10" scale="2"/>
-            <field name="total" title="Total" precision="10" scale="2"/>
+            <!--            <field name="stateSelect" title="Status" selection="sales.orders.status.select" widget="NavSelect" />-->
+            <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" readonly="true"/>
+            <field name="total" title="Total" precision="10" scale="2" readonly="true"/>
+            <field name="stateSelect" title="State" widget="NavSelect" readonly="true"/>
         </panel>
 
         <panel name="contentPanel" title="Details">
@@ -38,6 +43,18 @@
 
     <action-method name="action-invoicing-invoice-method-init-invoiceDate">
         <call class="com.axelor.apps.invoicing.web.InvoiceController" method="setInvoiceDateInitValue"/>
+    </action-method>
+
+    <action-method name="action-invoicing-invoice-method-computeExTaxTotal">
+        <call class="com.axelor.apps.invoicing.web.InvoiceController" method="computeInvoiceExTaxTotal"/>
+    </action-method>
+
+    <action-method name="action-invoicing-invoice-method-computeTotal">
+        <call class="com.axelor.apps.invoicing.web.InvoiceController" method="computeInvoiceTotal"/>
+    </action-method>
+
+    <action-method name="action-invoicing-invoice-method-setStateSelectToValidate">
+        <call class="com.axelor.apps.invoicing.web.InvoiceController" method="setStateSelectToValidate"/>
     </action-method>
 
 </object-views>

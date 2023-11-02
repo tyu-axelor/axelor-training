@@ -15,7 +15,7 @@
 
         <one-to-many name="orderLineList" ref="com.axelor.apps.sales.db.OrderLine" title="Order lines" mappedBy="orders"/>
 
-        <integer name="stateSelect" title="State"/>
+        <integer name="stateSelect" title="State" selection="sales.orders.status.select"/>
 
     </entity>
 
