@@ -44,7 +44,14 @@ public class InvoiceController {
         System.out.println(orderAfterProcess.getInvoice().toString());
 //        response.setValue("invoice", orderAfterProcess.getInvoice());
 //        response.setValue("orders", order);
+
         response.setReload(true);
+//        response.setAttr("invoice", "hideIf","invoice != null");
+    }
+
+    public void setDefaultOrderDate(ActionRequest request, ActionResponse response){
+        response.setValue("orderDate", java.time.LocalDate.now());
+        response.setValue("stateSelect", 0);
     }
 
 

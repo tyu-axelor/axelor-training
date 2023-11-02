@@ -21,20 +21,21 @@
 
 
         <panel name="overviewPanel" title="Contact Overview">
-            <field name="picture" title="Photo" widget="image"/>
-            <field name="fullName" />
+            <field name="picture" title="Photo" widget="image" colSpan="4"/>
+            <field name="fullName" hideIf="fullName == null" colSpan="8"/>
 <!--                <editor>-->
-            <field name="title" colSpan="3" grid-view="title-grid" form-view="title-form"/>
+            <field name="title" colSpan="4" grid-view="title-grid" form-view="title-form"/>
             <field name="firstName" colSpan="4"/>
-            <field name="lastName" colSpan="5"/>
+            <field name="lastName" colSpan="4"/>
 <!--                </editor>-->
 
 
 
 
-            <field name="dateOfBirth" />
+<!--            <field name="dateOfBirth" validIf="dateOfBirth &lt; 'eval:__date__' || dateOfBirth == 'eval:__date__'" colSpan="4"/>-->
+            <field name="dateOfBirth" validIf="dateOfBirth &lt;= 'eval:__date__'" colSpan="4"/>
 
-            <field name="email" widget="email">
+            <field name="email" widget="email" colSpan="4">
                 <viewer><![CDATA[
                         <a href="mailto:{{record.email}}">{{record.email}}</a>
             ]]></viewer>
@@ -42,7 +43,7 @@
 
             <!--    The viewer uses angular.js template to render the values.   -->
 
-            <field name="phone" widget="phone">
+            <field name="phone" widget="phone" colSpan="4">
                 <viewer><![CDATA[
         <a href="tel:{{record.phone}}">{{record.phone}}</a>
         ]]></viewer>
@@ -51,13 +52,13 @@
         </panel>
 
         <panel name="addressPanel" title="Address" colSpan="16">
-            <field name="address" title="Address Information" colSpan="16" form-view="address-form" grid-view="address-grid">
+            <field name="address" title="Address Information" colSpan="16" form-view="address-form" grid-view="address-grid" canNew="true">
                 <editor>
 
                     <field name="street" colSpan="3"/>
                     <field name="zip" colSpan="3"/>
                     <field name="city" colSpan="3"/>
-                    <field name="country" colSpan="3"/>
+                    <field name="country" colSpan="3" readonly="true"/>
 
                 </editor>
             </field>

@@ -14,7 +14,7 @@
     <form name="sales-orders-form" id="invoice-sales-orders-form"
           title="Sales orders"
           model="com.axelor.apps.sales.db.Order"
-          onNew="action-orders-orderDate-date-default">
+          onNew="action-invoicing-invoice-method-add-invoice">
 
         <panel name="orderInfoPanel"
                title="Order Information"
@@ -74,6 +74,10 @@
         <attribute for="stateSelect" name="value" expr="eval:0"/>
     </action-attrs>
 
+    <action-method name="action-invoicing-order-method-orderDateDefault">
+        <call class="com.axelor.apps.invoicing.web.InvoiceController" method=""/>
+    </action-method>
+
     <action-record name="action-orders-compute-extaxtotal-total" model="com.axelor.apps.sales.db.Order">
         <field name="exTaxTotal" expr="eval: orderLineList.exTaxTotal.sum()"/>
         <field name="total" expr="eval: orderLineList.total.sum()"/>
@@ -92,7 +96,7 @@
     <!--    </action-record>-->
 
     <action-method name="action-invoicing-invoice-method-add-invoice">
-        <call class="com.axelor.apps.invoicing.web.InvoiceController" method="addInvoice"/>
+        <call class="com.axelor.apps.invoicing.web.InvoiceController" method="setDefaultOrderDate"/>
     </action-method>
 
 

@@ -44,7 +44,7 @@ public class OrderServiceImpl implements OrderService{
 
         curInvoice.setOrders(curOrder);
         curOrder.setInvoice(curInvoice);
-
+        curOrder.setBillingDate(curInvoice.getInvoiceDate());
         orderRepository.save(curOrder);
 //        System.out.println(curInvoice.getOrders());
 //        System.out.println(curOrder.getInvoice().getOrders());
