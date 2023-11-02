@@ -21,17 +21,17 @@
                colSpan="12">
 
 
-            <button name="validate" onClick="action-orders-validate,save" title="Validate" colSpan="4"/>
-            <button name="compute" onClick="action-orders-compute-extaxtotal-total,save" title="Compute" colSpan="4"/>
-            <button name="invoice" onClick="save,action-invoicing-invoice-method-add-invoice" title="Invoice"
+            <button name="validate" hideIf="stateSelect == 1" onClick="action-orders-validate,save" title="Validate" colSpan="4"/>
+            <button name="compute" hideIf="stateSelect == 1" onClick="action-orders-compute-extaxtotal-total,save" title="Compute" colSpan="4"/>
+            <button name="invoice" hideIf="stateSelect != 1 || invoice != null" onClick="save,action-invoicing-invoice-method-add-invoice" title="Invoice"
                     colSpan="4"/>
 
 
             <field name="customer" colSpan="12" form-view="contact-form" grid-view="contact-grid"/>
 
 
-            <field name="orderDate" title="Order's Date" required="true"/>
-            <field name="confirmationDate" title="Confirmation date"/>
+            <field name="orderDate" title="Order's Date" required="true" validIf="orderDate &lt;= 'eval:__date__'"/>
+            <field name="confirmationDate" required="true" title="Confirmation date"/>
 
 
             <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" readonly="true"/>
@@ -51,7 +51,8 @@
             <!--                   form-view="sales-orderLine-form" grid-view="sales-orderLine-orders-grid"-->
             <!--                   field="orderLineList" colSpan="12" target="com.axelor.apps.sales.db.OrderLine"/>-->
 
-            <field name="invoice" title="Invoice"/>
+            <field name="invoice" title="Invoice" readonly="true" colSpan="6"/>
+            <field name="billingDate" hideIf="billingDate == null" title="Billing Date" readonly="true" colSpan="6"/>
         </panel>
 <!--        <panel name="invoicePanel" title="Invoice" grid-view="invoicing-invoice-grid" form-view="invoicing-invoice-form"-->
 <!--               colSpan="12"-->
@@ -93,5 +94,7 @@
     <action-method name="action-invoicing-invoice-method-add-invoice">
         <call class="com.axelor.apps.invoicing.web.InvoiceController" method="addInvoice"/>
     </action-method>
+
+
 
 </object-views>
