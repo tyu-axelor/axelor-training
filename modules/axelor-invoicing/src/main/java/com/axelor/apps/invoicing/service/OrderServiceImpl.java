@@ -6,6 +6,7 @@ import com.axelor.apps.invoicing.db.repo.InvoiceRepository;
 import com.axelor.apps.sales.db.Order;
 import com.axelor.apps.sales.db.OrderLine;
 import com.axelor.apps.sales.db.repo.OrderRepository;
+import com.axelor.db.JPA;
 import com.axelor.db.Query;
 import com.google.inject.Inject;
 import com.google.inject.persist.Transactional;
@@ -13,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,17 +79,34 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void generateInvoiceForLateOrder() {
 //        System.out.println("Test function. Invoice Generated");
+
+        Query<Order> countQuery = orderRepository.all().filter(
+                "self.forecastBillingDate < :curDate1 AND self.invoice = null"
+        );
+        long countNum = countQuery.bind("curDate1", LocalDate.now()).count();
+
+        System.out.println(countNum);
+
         Query<Order> orderListQuery = orderRepository.all().filter(
                 "self.forecastBillingDate < :curDate AND self.invoice = null"
         );
         orderListQuery.bind("curDate", java.time.LocalDate.now());
 
-        List<Order> orderList = orderListQuery.fetch();
+
+
+
+        for(int i = 0; i < countNum; i+=50){
+            List<Order> orderList = orderListQuery.fetch(50, i);
+            generateInvoiceForEachOrder(orderList);
+            JPA.clear();
+
+        }
+
 //        for (Order order : orderList) {
 //            System.out.println(order);
 //        }
 
-        generateInvoiceForEachOrder(orderList);
+
 
 
     }
