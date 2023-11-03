@@ -80,12 +80,12 @@ public class OrderServiceImpl implements OrderService {
     public void generateInvoiceForLateOrder() {
 //        System.out.println("Test function. Invoice Generated");
 
-        Query<Order> countQuery = orderRepository.all().filter(
-                "self.forecastBillingDate < :curDate1 AND self.invoice = null"
-        );
-        long countNum = countQuery.bind("curDate1", LocalDate.now()).count();
-
-        System.out.println(countNum);
+//        Query<Order> countQuery = orderRepository.all().filter(
+//                "self.forecastBillingDate < :curDate1 AND self.invoice = null"
+//        );
+//        long countNum = countQuery.bind("curDate1", LocalDate.now()).count();
+//
+//        System.out.println(countNum);
 
         Query<Order> orderListQuery = orderRepository.all().filter(
                 "self.forecastBillingDate < :curDate AND self.invoice = null"
@@ -93,14 +93,25 @@ public class OrderServiceImpl implements OrderService {
         orderListQuery.bind("curDate", java.time.LocalDate.now());
 
 
+        int limit = 50;
+        int offSet = 0;
+        List<Order> orderList;
+        do {
+            orderList = orderListQuery.fetch(limit, offSet);
+            if(orderList.isEmpty()) break;
+            else{
+                generateInvoiceForEachOrder(orderList);
+                JPA.clear();
+                offSet += limit;
+            }
+        }while (true);
 
-
-        for(int i = 0; i < countNum; i+=50){
-            List<Order> orderList = orderListQuery.fetch(50, i);
-            generateInvoiceForEachOrder(orderList);
-            JPA.clear();
-
-        }
+//        for(int i = 0; i < countNum; i+=50){
+//            List<Order> orderList = orderListQuery.fetch(50, i);
+//            generateInvoiceForEachOrder(orderList);
+//            JPA.clear();
+//
+//        }
 
 //        for (Order order : orderList) {
 //            System.out.println(order);
@@ -114,8 +125,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void generateInvoiceForEachOrder(List<Order> orderList) {
         for (Order order : orderList) {
-            Order processedOrder = generateInvoiceForTheOrder(order);
-            System.out.println(processedOrder.getInvoice());
+            generateInvoiceForTheOrder(order);
         }
     }
 }
