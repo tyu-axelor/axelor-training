@@ -4,18 +4,17 @@
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
 
-
     <form name="sales-orders-form" id="invoice-sales-orders-form"
           title="Sales orders"
           model="com.axelor.apps.sales.db.Order"
           extension="true"
-          onNew="action-invoicing-order-method-orderDateDefault" >
+          onNew="action-invoicing-order-method-orderDateDefault">
 
-        <extend target="/">
-            <attribute name="readonlyIf" value="stateSelect == 1"/>
-        </extend>
+        <!--        <extend target="/">-->
+        <!--            <attribute name="readonlyIf" value="stateSelect == 1"/>-->
+        <!--        </extend>-->
 
-        <extend target="//panel[@name='orderInfoPanel']/button[@name='compute']">
+        <extend target="//panel[@name='orderInfoPanel']/button[@name='validate']">
             <insert position="after">
                 <button name="invoice" hideIf="stateSelect != 1 || invoice != null"
                         onClick="save,action-invoicing-order-method-add-invoice"
@@ -25,93 +24,113 @@
             <attribute name="colSpan" value="4"/>
         </extend>
 
+        <extend target="//panel[@name='orderInfoPanel']/button[@name='compute']">
+            <attribute name="colSpan" value="4"/>
+        </extend>
+
         <extend target="//panel[@name='orderInfoPanel']/button[@name='validate']">
             <attribute name="colSpan" value="4"/>
         </extend>
 
-<!--        <panel name="orderInfoPanel"-->
-<!--               title="Order Information"-->
-<!--               colSpan="12">-->
+        <extend target="//panel[@name='orderInfoPanel']/field[@name='customer']">
+            <attribute name="readonlyIf" value="stateSelect == 1"/>
+        </extend>
+
+        <extend target="//panel[@name='orderInfoPanel']/field[@name='orderDate']">
+            <attribute name="readonlyIf" value="stateSelect == 1"/>
+        </extend>
+
+        <extend target="//panel[@name='orderInfoPanel']/field[@name='confirmationDate']">
+            <attribute name="readonlyIf" value="stateSelect == 1"/>
+        </extend>
+
+        <extend target="//panel[@name='contentPanel']">
+            <attribute name="readonlyIf" value="stateSelect == 1"/>
+        </extend>
 
 
-<!--            <button name="validate" hideIf="stateSelect == 1" onClick="action-orders-validate,save" title="Validate"-->
-<!--                    colSpan="4"/>-->
-<!--            <button name="compute" hideIf="stateSelect == 1" onClick="action-orders-compute-extaxtotal-total,save"-->
-<!--                    title="Compute" colSpan="4"/>-->
+        <!--        <panel name="orderInfoPanel"-->
+        <!--               title="Order Information"-->
+        <!--               colSpan="12">-->
 
 
-<!--            <field name="customer" colSpan="12" form-view="contact-form" grid-view="contact-grid"/>-->
+        <!--            <button name="validate" hideIf="stateSelect == 1" onClick="action-orders-validate,save" title="Validate"-->
+        <!--                    colSpan="4"/>-->
+        <!--            <button name="compute" hideIf="stateSelect == 1" onClick="action-orders-compute-extaxtotal-total,save"-->
+        <!--                    title="Compute" colSpan="4"/>-->
 
 
-<!--            <field name="orderDate" title="Order's Date" required="true" validIf="orderDate &lt;= 'eval:__date__'"/>-->
-<!--            <field name="confirmationDate" required="true" title="Confirmation date"/>-->
-
-<!--            <field name="stateSelect" title="Status" selection="sales.orders.status.select"-->
-<!--                   onChange="action-orders-status-validated-confirmdate" widget="NavSelect" readonly="true"/>-->
-<!--            <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" readonly="true"/>-->
-<!--            <field name="total" title="Total" precision="10" scale="2" readonly="true"/>-->
+        <!--            <field name="customer" colSpan="12" form-view="contact-form" grid-view="contact-grid"/>-->
 
 
-<!--        </panel>-->
+        <!--            <field name="orderDate" title="Order's Date" required="true" validIf="orderDate &lt;= 'eval:__date__'"/>-->
+        <!--            <field name="confirmationDate" required="true" title="Confirmation date"/>-->
+
+        <!--            <field name="stateSelect" title="Status" selection="sales.orders.status.select"-->
+        <!--                   onChange="action-orders-status-validated-confirmdate" widget="NavSelect" readonly="true"/>-->
+        <!--            <field name="exTaxTotal" title="Total without tax" precision="10" scale="2" readonly="true"/>-->
+        <!--            <field name="total" title="Total" precision="10" scale="2" readonly="true"/>-->
+
+
+        <!--        </panel>-->
 
         <extend target="//panel[@name='contentPanel']/panel-related[@name='detailLinesPanel']">
             <insert position="after">
-                    <field name="invoice" title="Invoice" hideIf="invoice==null" readonly="true" colSpan="6"/>
-                    <field name="billingDate" hideIf="billingDate == null" title="Billing Date" readonly="true" colSpan="6"/>
+                <field name="invoice" title="Invoice" hideIf="invoice==null" readonly="true" colSpan="6"/>
+                <field name="billingDate" hideIf="billingDate == null" title="Billing Date" readonly="true"
+                       colSpan="6"/>
 
             </insert>
         </extend>
 
     </form>
 
-<!--        <panel name="contentPanel" title="Content">-->
-<!--            <panel-related name="detailLinesPanel" title="Order Lines" field="orderLineList"-->
-<!--                           grid-view="sales-orderLine-orders-grid" form-view="sales-orderLine-form"-->
-<!--                           colSpan="12"-->
-<!--            />-->
-<!--            <field name="invoice" title="Invoice" readonly="true" colSpan="6"/>-->
-<!--            <field name="billingDate" hideIf="billingDate == null" title="Billing Date" readonly="true" colSpan="6"/>-->
-<!--        </panel>-->
+    <!--        <panel name="contentPanel" title="Content">-->
+    <!--            <panel-related name="detailLinesPanel" title="Order Lines" field="orderLineList"-->
+    <!--                           grid-view="sales-orderLine-orders-grid" form-view="sales-orderLine-form"-->
+    <!--                           colSpan="12"-->
+    <!--            />-->
+    <!--            <field name="invoice" title="Invoice" readonly="true" colSpan="6"/>-->
+    <!--            <field name="billingDate" hideIf="billingDate == null" title="Billing Date" readonly="true" colSpan="6"/>-->
+    <!--        </panel>-->
 
 
+    <!--        <panel name="invoicePanel" title="Invoice" grid-view="invoicing-invoice-grid" form-view="invoicing-invoice-form"-->
+    <!--               colSpan="12"-->
+    <!--        >-->
+    <!--            -->
+    <!--        </panel>-->
+
+    <!--        <panel name="orderLinesPanel"-->
+    <!--               title="Order Lines"-->
+    <!--               >-->
+    <!--            <field name="orderLineList" form-view="sales-orderLine-form" grid-view="sales-orderLine-orders-grid" colSpan="12"/>-->
+    <!--        </panel>-->
 
 
-        <!--        <panel name="invoicePanel" title="Invoice" grid-view="invoicing-invoice-grid" form-view="invoicing-invoice-form"-->
-        <!--               colSpan="12"-->
-        <!--        >-->
-        <!--            -->
-        <!--        </panel>-->
+    <!--    </form>-->
 
-        <!--        <panel name="orderLinesPanel"-->
-        <!--               title="Order Lines"-->
-        <!--               >-->
-        <!--            <field name="orderLineList" form-view="sales-orderLine-form" grid-view="sales-orderLine-orders-grid" colSpan="12"/>-->
-        <!--        </panel>-->
-
-
-<!--    </form>-->
-
-<!--    <action-attrs name="action-orders-orderDate-date-default">-->
-<!--        <attribute for="orderDate" name="value" expr="eval:__date__"/>-->
-<!--        <attribute for="stateSelect" name="value" expr="eval:0"/>-->
-<!--    </action-attrs>-->
+    <!--    <action-attrs name="action-orders-orderDate-date-default">-->
+    <!--        <attribute for="orderDate" name="value" expr="eval:__date__"/>-->
+    <!--        <attribute for="stateSelect" name="value" expr="eval:0"/>-->
+    <!--    </action-attrs>-->
 
     <action-method name="action-invoicing-order-method-orderDateDefault">
         <call class="com.axelor.apps.invoicing.web.OrderController" method="setDefaultOrderDate"/>
     </action-method>
 
-<!--    <action-record name="action-orders-compute-extaxtotal-total" model="com.axelor.apps.sales.db.Order">-->
-<!--        <field name="exTaxTotal" expr="eval: orderLineList.exTaxTotal.sum()"/>-->
-<!--        <field name="total" expr="eval: orderLineList.total.sum()"/>-->
+    <!--    <action-record name="action-orders-compute-extaxtotal-total" model="com.axelor.apps.sales.db.Order">-->
+    <!--        <field name="exTaxTotal" expr="eval: orderLineList.exTaxTotal.sum()"/>-->
+    <!--        <field name="total" expr="eval: orderLineList.total.sum()"/>-->
 
-<!--    </action-record>-->
+    <!--    </action-record>-->
 
-<!--    <action-record name="action-orders-validate" model="com.axelor.apps.sales.db.Order">-->
-<!--        <field name="exTaxTotal" expr="eval: orderLineList.exTaxTotal.sum()"/>-->
-<!--        <field name="total" expr="eval: orderLineList.total.sum()"/>-->
-<!--        <field name="stateSelect" expr="eval:1"/>-->
-<!--        <field name="confirmationDate" expr="eval:__date__"/>-->
-<!--    </action-record>-->
+    <!--    <action-record name="action-orders-validate" model="com.axelor.apps.sales.db.Order">-->
+    <!--        <field name="exTaxTotal" expr="eval: orderLineList.exTaxTotal.sum()"/>-->
+    <!--        <field name="total" expr="eval: orderLineList.total.sum()"/>-->
+    <!--        <field name="stateSelect" expr="eval:1"/>-->
+    <!--        <field name="confirmationDate" expr="eval:__date__"/>-->
+    <!--    </action-record>-->
 
     <!--    <action-record name="action-orders-status-validated-confirmdate" model="com.axelor.apps.sales.db.Order">-->
     <!--        <field name="confirmationDate" expr="eval:__date__"/>-->

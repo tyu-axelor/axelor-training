@@ -20,11 +20,12 @@
           readonlyIf="stateSelect == 1">
 
         <panel name="invoiceInfoPanel" title="Invoice Information" colSpan="12">
-            <button name="validate" onClick="action-invoicing-invoice-method-setStateSelectToValidate,save"
-                    hideIf="stateSelect == 1" title="Validate" colSpan="6" selection="invoicing.orders.status.select"/>
+
             <button name="compute"
                     onClick="action-invoicing-invoice-method-computeExTaxTotal,action-invoicing-invoice-method-computeTotal,save"
                     hideIf="stateSelect == 1" title="Compute" colSpan="6" selection="invoicing.orders.status.select"/>
+            <button name="validate" onClick="action-invoicing-invoice-method-setStateSelectToValidate,save"
+                    hideIf="stateSelect == 1" title="Validate" colSpan="6" selection="invoicing.orders.status.select"/>
             <field name="customer" colSpan="12" form-view="contact-form" grid-view="contact-grid"/>
             <field name="invoiceDate" title="Date of Invoice"/>
             <!--            <field name="stateSelect" title="Status" selection="sales.orders.status.select" widget="NavSelect" />-->
