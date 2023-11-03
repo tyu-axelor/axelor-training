@@ -2,9 +2,11 @@ package com.axelor.apps.invoicing.service;
 
 import com.axelor.apps.invoicing.db.Invoice;
 import com.axelor.apps.invoicing.db.InvoiceLine;
+import com.axelor.apps.invoicing.db.repo.InvoiceRepository;
 import com.axelor.apps.sales.db.Order;
 import com.axelor.apps.sales.db.OrderLine;
 import com.axelor.apps.sales.db.repo.OrderRepository;
+import com.axelor.db.Query;
 import com.google.inject.Inject;
 import com.google.inject.persist.Transactional;
 import org.slf4j.Logger;
@@ -14,15 +16,17 @@ import java.lang.invoke.MethodHandles;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
 
     private final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     protected OrderRepository orderRepository;
+    protected InvoiceRepository invoiceRepository;
 
     @Inject
-    public OrderServiceImpl(OrderRepository orderRepository) {
+    public OrderServiceImpl(OrderRepository orderRepository, InvoiceRepository invoiceRepository) {
         this.orderRepository = orderRepository;
+        this.invoiceRepository = invoiceRepository;
     }
 
 
@@ -55,7 +59,7 @@ public class OrderServiceImpl implements OrderService{
     public List<InvoiceLine> generateInvoiceLineListFromOrderLineList(List<OrderLine> orderLineList, Invoice invoice) {
         List<InvoiceLine> resultInvoiceLineList = new ArrayList<>();
         // orderLine : product, description, qty, unitPrice, exTaxTotal, taxRate, total,
-        for(OrderLine orderLine: orderLineList){
+        for (OrderLine orderLine : orderLineList) {
             InvoiceLine invoiceLine = new InvoiceLine();
             invoiceLine.setInvoice(invoice);
             invoiceLine.setProduct(orderLine.getProduct());
@@ -72,6 +76,27 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public void generateInvoiceForLateOrder() {
-        System.out.println("Test function. Invoice Generated");
+//        System.out.println("Test function. Invoice Generated");
+        Query<Order> orderListQuery = orderRepository.all().filter(
+                "self.forecastBillingDate < :curDate AND self.invoice = null"
+        );
+        orderListQuery.bind("curDate", java.time.LocalDate.now());
+
+        List<Order> orderList = orderListQuery.fetch();
+//        for (Order order : orderList) {
+//            System.out.println(order);
+//        }
+
+        generateInvoiceForEachOrder(orderList);
+
+
+    }
+
+    @Override
+    public void generateInvoiceForEachOrder(List<Order> orderList) {
+        for (Order order : orderList) {
+            Order processedOrder = generateInvoiceForTheOrder(order);
+            System.out.println(processedOrder.getInvoice());
+        }
     }
 }
