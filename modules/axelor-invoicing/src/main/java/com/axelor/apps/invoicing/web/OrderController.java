@@ -19,8 +19,8 @@ public class OrderController {
 
         OrderService orderService = Beans.get(OrderService.class);
         Order orderAfterProcess = orderService.generateInvoiceForTheOrder(order);
-        System.out.println(orderAfterProcess);
-        System.out.println(orderAfterProcess.getInvoice().toString());
+//        System.out.println(orderAfterProcess);
+//        System.out.println(orderAfterProcess.getInvoice().toString());
 //        response.setValue("invoice", orderAfterProcess.getInvoice());
 //        response.setValue("orders", order);
 
@@ -31,5 +31,10 @@ public class OrderController {
     public void setDefaultOrderDate(ActionRequest request, ActionResponse response){
         response.setValue("orderDate", java.time.LocalDate.now());
         response.setValue("stateSelect", 0);
+    }
+
+    public void generateInvoiceForLateOrders(ActionRequest request, ActionResponse response){
+        OrderService orderService = Beans.get(OrderService.class);
+        orderService.generateInvoiceForLateOrder();
     }
 }

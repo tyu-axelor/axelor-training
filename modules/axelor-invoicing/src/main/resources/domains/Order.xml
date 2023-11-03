@@ -9,6 +9,8 @@
         <one-to-one name="invoice" ref="com.axelor.apps.invoicing.db.Invoice" mappedBy="orders"/>
         <date name="billingDate" title="Billing Date"/>
         <integer name="stateSelect" title="State" selection="invoicing.orders.status.select"/>
+
+        <date name="forecastBillingDate" title="Forecasted Billing Date"/>
     </entity>
 
 </domain-models>

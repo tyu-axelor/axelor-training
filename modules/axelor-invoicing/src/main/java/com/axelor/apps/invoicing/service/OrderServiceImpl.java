@@ -69,4 +69,9 @@ public class OrderServiceImpl implements OrderService{
         }
         return resultInvoiceLineList;
     }
+
+    @Override
+    public void generateInvoiceForLateOrder() {
+        System.out.println("Test function. Invoice Generated");
+    }
 }

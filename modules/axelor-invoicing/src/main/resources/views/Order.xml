@@ -3,6 +3,21 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
+    <grid name="sales-orders-grid" title="Sales orders" model="com.axelor.apps.sales.db.Order"
+          id="invoice-sales-orders-grid" extension="true">
+        <extend target="//field[@name='customer']">
+            <insert position="before">
+                <menubar>
+                    <menu name="ordersToolsMenu" title="Order Tools" icon="fa-wrench" showTitle="true">
+                        <item name="generateInvoiceForLateOrdersItem" title="Generate Invoice For Late Orders" action="action-invoicing-order-method-generateInvoiceForLateOrders"/>
+                    </menu>
+                </menubar>
+
+
+            </insert>
+        </extend>
+    </grid>
+
 
     <form name="sales-orders-form" id="invoice-sales-orders-form"
           title="Sales orders"
@@ -13,6 +28,7 @@
         <!--        <extend target="/">-->
         <!--            <attribute name="readonlyIf" value="stateSelect == 1"/>-->
         <!--        </extend>-->
+
 
         <extend target="//panel[@name='orderInfoPanel']/button[@name='validate']">
             <insert position="after">
@@ -40,6 +56,12 @@
             <attribute name="readonlyIf" value="stateSelect == 1"/>
         </extend>
 
+        <extend target="//panel[@name='orderInfoPanel']/field[@name='total']">
+            <insert position="after">
+                <field name="forecastBillingDate" title="Forecasted Billing Date"/>
+            </insert>
+        </extend>
+
         <extend target="//panel[@name='contentPanel']">
             <attribute name="readonlyIf" value="stateSelect == 1"/>
         </extend>
@@ -60,6 +82,10 @@
 
     <action-method name="action-invoicing-order-method-add-invoice">
         <call class="com.axelor.apps.invoicing.web.OrderController" method="addInvoice"/>
+    </action-method>
+
+    <action-method name="action-invoicing-order-method-generateInvoiceForLateOrders">
+        <call class="com.axelor.apps.invoicing.web.OrderController" method="generateInvoiceForLateOrders"/>
     </action-method>
 
 </object-views>

@@ -12,4 +12,6 @@ public interface OrderService {
     public Order generateInvoiceForTheOrder(Order curOrder);
 
     public List<InvoiceLine> generateInvoiceLineListFromOrderLineList(List<OrderLine> orderLineList, Invoice invoice);
+
+    public void generateInvoiceForLateOrder();
 }
