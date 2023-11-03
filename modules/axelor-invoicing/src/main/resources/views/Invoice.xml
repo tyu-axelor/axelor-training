@@ -6,7 +6,6 @@
     <grid name="invoicing-invoice-grid"
           title="Invoices"
           model="com.axelor.apps.invoicing.db.Invoice">
-        <!--           canNew="false"-->
 
         <field name="customer" grid-view="contact-grid" form-view="contact-form"/>
         <field name="invoiceDate" title="Date of Invoice"/>

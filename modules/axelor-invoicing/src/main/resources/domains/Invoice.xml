@@ -18,7 +18,6 @@
 
         <one-to-one name="orders" ref="com.axelor.apps.sales.db.Order"/>
 
-
     </entity>
 
 </domain-models>

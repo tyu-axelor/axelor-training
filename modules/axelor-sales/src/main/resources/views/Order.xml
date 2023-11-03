@@ -43,18 +43,7 @@
                            grid-view="sales-orderLine-orders-grid" form-view="sales-orderLine-form"
                            colSpan="12"
             />
-
-            <!--            <field name="orderLineList" title="Details Lines"-->
-            <!--                   form-view="sales-orderLine-form" grid-view="sales-orderLine-orders-grid"-->
-            <!--                   field="orderLineList" colSpan="12" target="com.axelor.apps.sales.db.OrderLine"/>-->
         </panel>
-
-        <!--        <panel name="orderLinesPanel"-->
-        <!--               title="Order Lines"-->
-        <!--               >-->
-        <!--            <field name="orderLineList" form-view="sales-orderLine-form" grid-view="sales-orderLine-orders-grid" colSpan="12"/>-->
-        <!--        </panel>-->
-
     </form>
 
     <action-attrs name="action-orders-orderDate-date-default">
@@ -74,10 +63,5 @@
         <field name="stateSelect" expr="eval:1"/>
         <field name="confirmationDate" expr="eval:__date__"/>
     </action-record>
-
-    <!--    <action-record name="action-orders-status-validated-confirmdate" model="com.axelor.apps.sales.db.Order">-->
-    <!--        <field name="confirmationDate" expr="eval:__date__"/>-->
-    <!--    </action-record>-->
-
 
 </object-views>

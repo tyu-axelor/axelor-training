@@ -58,15 +58,7 @@ public class InvoiceController {
     }
 
     public void setStateSelectToValidate(ActionRequest request, ActionResponse response){
-
         response.setValue("stateSelect", 1);
-
-
-
-        Context ctx = request.getContext();
-        Invoice invoice = ctx.asType(Invoice.class);
-        System.out.println(invoice.getStateSelect());
-
     }
 
 
