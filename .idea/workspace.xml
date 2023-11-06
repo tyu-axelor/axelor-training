@@ -5,27 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/module/AccountingModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/AccountingEntryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/AccountingEntryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/AccountingEntryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Account.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/AccountingEntry.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/AccountingEntryLine.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Invoice.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/InvoiceLine.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Order.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Product.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Account.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/AccountingEntry.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/AccountingEntryLine.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Invoice.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Order.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceLineService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceLineServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/InvoiceLineController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/InvoiceLine.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Product.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/module/AccountingModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/module/AccountingModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Invoice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Invoice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Order.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Invoice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Invoice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Order.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +96,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "debugger.hotswap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -265,7 +255,7 @@
       <workItem from="1698859570671" duration="13161000" />
       <workItem from="1698929149542" duration="24045000" />
       <workItem from="1699015033609" duration="17342000" />
-      <workItem from="1699277747341" duration="11782000" />
+      <workItem from="1699277747341" duration="19153000" />
     </task>
     <servers />
   </component>
@@ -287,5 +277,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

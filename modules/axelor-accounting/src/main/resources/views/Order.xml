@@ -4,7 +4,9 @@
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
 
-    <form name="invoice-sales-orders-form" id="accounting-sales-orders-form"
+    <form name="sales-orders-form"
+
+          id="accounting-sales-orders-form"
           title="Sales orders"
           model="com.axelor.apps.sales.db.Order"
           extension="true">
@@ -16,10 +18,18 @@
                 <field name="customerAccount" title="Customer Account"/>
             </insert>
         </extend>
+        
+        <extend target="//panel[@name='orderInfoPanel']/button[@name='invoice']">
+            <attribute name="onClick" value="save,action-accounting-orders-method-generateinvoice"/>
+        </extend>
 
 
 
     </form>
+
+    <action-method name="action-accounting-orders-method-generateinvoice">
+        <call class="com.axelor.apps.accounting.web.OrderController" method="generatedInvoiceFromOrder"/>
+    </action-method>
 
 
 </object-views>

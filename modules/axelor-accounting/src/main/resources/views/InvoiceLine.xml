@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <grid name="invoicing-invoiceLine-grid"
+          title="Invoice Lines"
+          model="com.axelor.apps.invoicing.db.InvoiceLine"
+          id="accounting-invoicing-invoiceLine-grid"
+          extension="true"
+    >
+        <extend target="//field[@name='total']">
+            <insert position="after">
+                <field name="account" title="Account"/>
+            </insert>
+        </extend>
+    </grid>
+
+    <form name="invoicing-orderLine-form"
+          title="Order Lines"
+          model="com.axelor.apps.invoicing.db.InvoiceLine"
+          id="accounting-invoicing-invoiceLine-form"
+          extension="true"
+    >
+        <extend target="//panel[@name='overviewPanel']/field[@name='product']">
+            <attribute name="onChange" value="action-accounting-invoiceline-onchange"/>
+        </extend>
+
+        <extend target="//panel[@name='overviewPanel']/field[@name='total']">
+            <insert position="after">
+                <field name="account" title="Account"/>
+            </insert>
+        </extend>
+
+    </form>
+
+    <action-group name="action-accounting-invoiceline-onchange">
+        <action name="action-invoicing-invoiceLine-method-loadUnitPrice"/>
+        <action name="action-invoicing-invoiceLine-method-loadDescription"/>
+        <action name="action-accounting-invoiceline-account-setdefaultvalue"/>
+    </action-group>
+
+    <action-method name="action-accounting-invoiceline-account-setdefaultvalue">
+        <call class="com.axelor.apps.accounting.web.InvoiceLineController" method="setAccountDefaultValue"/>
+    </action-method>
+
+</object-views>

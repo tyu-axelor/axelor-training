@@ -6,8 +6,7 @@
     <module name="invoicing" package="com.axelor.apps.invoicing.db"/>
 
     <entity name="Invoice">
-        <many-to-one name="customerAccount" title="Customer Account" ref="com.axelor.apps.accounting.db.Account"
-                     />
+        <many-to-one name="customerAccount" title="Customer Account" ref="com.axelor.apps.accounting.db.Account"/>
 
     </entity>
 

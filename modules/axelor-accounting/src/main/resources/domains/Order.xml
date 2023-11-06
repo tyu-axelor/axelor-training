@@ -6,8 +6,7 @@
     <module name="sales" package="com.axelor.apps.sales.db"/>
 
     <entity name="Order">
-        <many-to-one name="customerAccount" title="Customer Account" ref="com.axelor.apps.accounting.db.Account"
-                     />
+        <many-to-one name="customerAccount" title="Customer Account" ref="com.axelor.apps.accounting.db.Account"/>
     </entity>
 
 </domain-models>
