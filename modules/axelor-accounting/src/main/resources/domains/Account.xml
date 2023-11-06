@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models https://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
+
+    <module name="accounting" package="com.axelor.apps.accounting.db"/>
+
+    <entity name="Account">
+        <string name="name" title="Name"/>
+        <string name="code" title="Code"/>
+        <string name="fullName" title="Full Name" namecolumn="true" search="name,code">
+            <![CDATA[
+            if (name == null && code == null)
+                return null;
+            return code + " " + name;
+  ]]>
+        </string>
+
+        <one-to-one name="accountingEntryLine" ref="com.axelor.apps.accounting.db.AccountingEntryLine" mappedBy="account"/>
+
+    </entity>
+
+</domain-models>

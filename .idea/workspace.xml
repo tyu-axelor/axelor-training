@@ -5,6 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/module/AccountingModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/AccountingEntryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/AccountingEntryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/AccountingEntryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Account.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/AccountingEntry.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/AccountingEntryLine.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Invoice.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/InvoiceLine.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Order.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Product.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Account.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/AccountingEntry.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/AccountingEntryLine.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Invoice.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Order.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,27 +89,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/teng/Documents/repo/open-suite-webapp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/teng/Documents/Projects/axelor-training/modules/axelor-invoicing/src/main/java/com/axelor/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "/home/teng/Documents/Projects/axelor-training",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/home/teng/Documents/Projects/axelor-training/modules/axelor-accounting/src/main/java/com/axelor/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/gradle/wrapper" />
@@ -243,7 +264,8 @@
       <workItem from="1698844043071" duration="1542000" />
       <workItem from="1698859570671" duration="13161000" />
       <workItem from="1698929149542" duration="24045000" />
-      <workItem from="1699015033609" duration="16759000" />
+      <workItem from="1699015033609" duration="17342000" />
+      <workItem from="1699277747341" duration="11782000" />
     </task>
     <servers />
   </component>

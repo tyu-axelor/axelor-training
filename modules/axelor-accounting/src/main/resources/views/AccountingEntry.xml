@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <grid name="accounting-accountingEntry-grid" title="AccountEntry Info"
+          model="com.axelor.apps.accounting.db.AccountingEntry">
+
+        <field name="invoiceDate" title="Invoice's Date"/>
+        <field name="accountingEntryLineList" title="AccountingEntry Lines"
+               grid-view="accounting-accountingEntryLine-grid" form-view="accounting-accountingEntryLine-form"/>
+
+
+    </grid>
+
+
+    <form name="accounting-accountingEntry-form"
+          title="AccountEntry Info"
+          model="com.axelor.apps.accounting.db.AccountingEntry"
+          onSave="action-accounting-accountingEntry-method-checkDebitAndCredit">
+
+        <panel name="accountEntryPanel" title="AccountEntry Info" colSpan="12" showTitle="false">
+            <field name="invoiceDate" title="Invoice's Date" colSpan="6"/>
+            <field name="accountingEntryLineList" title="AccountingEntry Lines" colSpan="12"
+                   grid-view="accounting-accountingEntryLine-grid" form-view="accounting-accountingEntryLine-form"/>
+        </panel>
+
+    </form>
+
+    <action-method name="action-accounting-accountingEntry-method-checkDebitAndCredit">
+        <call class="com.axelor.apps.accounting.web.AccountingEntryController" method="checkDebitAndCredit"/>
+    </action-method>
+
+
+</object-views>

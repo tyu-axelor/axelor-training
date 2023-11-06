@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <menuitem name="accounting-root"
+              title="Accounting" />
+
+    <menuitem name="accounting-root-account"
+              parent="accounting-root"
+              title="All Accounts"
+              action="accounting.root.account"/>
+
+    <menuitem name="accounting-root-accountingEntry"
+              parent="accounting-root"
+              title="All AccountingEntries"
+              action="accounting.root.accountingEntry"/>
+
+    <menuitem name="accounting-root-accountingEntryLine"
+              parent="accounting-root"
+              title="All AccountingEntryLines"
+              action="accounting.root.accountingEntryLine"/>
+
+    <action-view name="accounting.root.account"
+                 title="Account"
+                 model="com.axelor.apps.accounting.db.Account">
+        <view type="grid" name="accounting-account-grid"/>
+        <view type="form" name="accounting-account-form"/>
+    </action-view>
+
+    <action-view name="accounting.root.accountingEntry"
+                 title="AccountingEntry"
+                 model="com.axelor.apps.accounting.db.AccountingEntry">
+        <view type="grid" name="accounting-accountingEntry-grid"/>
+        <view type="form" name="accounting-accountingEntry-form"/>
+    </action-view>
+
+    <action-view name="accounting.root.accountingEntryLine"
+                 title="AccountingEntryLine"
+                 model="com.axelor.apps.accounting.db.AccountingEntryLine">
+        <view type="grid" name="accounting-accountingEntryLine-grid"/>
+        <view type="form" name="accounting-accountingEntryLine-form"/>
+    </action-view>
+
+
+
+</object-views>

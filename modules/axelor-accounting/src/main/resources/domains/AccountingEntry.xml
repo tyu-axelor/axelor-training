@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models https://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
+
+    <module name="accounting" package="com.axelor.apps.accounting.db"/>
+
+    <entity name="AccountingEntry">
+        <date name="invoiceDate" title="Invoice's Date"/>
+        <one-to-many name="accountingEntryLineList" title="AccountingEntry Lines" ref="com.axelor.apps.accounting.db.AccountingEntryLine"
+        mappedBy="accountingEntry"/>
+
+
+
+    </entity>
+
+</domain-models>

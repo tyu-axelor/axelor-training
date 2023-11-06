@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+
+    <form name="invoice-sales-orders-form" id="accounting-sales-orders-form"
+          title="Sales orders"
+          model="com.axelor.apps.sales.db.Order"
+          extension="true">
+
+
+
+        <extend target="//panel[@name='orderInfoPanel']/field[@name='forecastBillingDate']">
+            <insert position="after">
+                <field name="customerAccount" title="Customer Account"/>
+            </insert>
+        </extend>
+
+
+
+    </form>
+
+
+</object-views>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <grid name="accounting-accountingEntryLine-grid" title="AccountEntryLine Info"
+          model="com.axelor.apps.accounting.db.AccountingEntryLine">
+
+<!--        <field name="accountingEntry" title="Accounting Entry" grid-view="accounting-accountingEntry-grid" form-view="accounting-accountingEntry-form"/>-->
+        <field name="account" title="Account" grid-view="accounting-account-grid" form-view="accounting-account-form"/>
+        <field name="debit" title="Debit"/>
+        <field name="credit" title="Credit"/>
+
+
+    </grid>
+
+
+    <form name="accounting-accountingEntryLine-form"
+          title="AccountEntryLine Info"
+          model="com.axelor.apps.accounting.db.AccountingEntryLine">
+
+        <panel name="accountEntryLinePanel" title="AccountEntryLine Info" colSpan="12" showTitle="false">
+<!--            <field name="accountingEntry" title="Accounting Entry" grid-view="accounting-accountingEntry-grid" form-view="accounting-accountingEntry-form"/>-->
+            <field name="account" title="Account" colSpan="3" grid-view="accounting-account-grid" form-view="accounting-account-form"/>
+            <field name="debit" title="Debit" colSpan="3"/>
+            <field name="credit" title="Credit" colSpan="3"/>
+        </panel>
+
+    </form>
+
+
+</object-views>

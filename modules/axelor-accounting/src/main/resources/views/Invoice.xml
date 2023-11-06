@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <!--    <grid name="invoicing-invoice-grid"-->
+    <!--          title="Invoices"-->
+    <!--          model="com.axelor.apps.invoicing.db.Invoice">-->
+
+    <!--        <field name="customer" grid-view="contact-grid" form-view="contact-form"/>-->
+    <!--        <field name="invoiceDate" title="Date of Invoice"/>-->
+
+    <!--    </grid>-->
+
+    <form name="invoicing-invoice-form"
+          title="Invoices"
+          model="com.axelor.apps.invoicing.db.Invoice"
+          id="accounting-invoicing-invoice-form"
+          extension="true"
+    >
+        <extend target="//panel[@name='invoiceInfoPanel']/field[@name='stateSelect']">
+            <insert position="after">
+                <field name="customerAccount" title="Customer Account"/>
+            </insert>
+        </extend>
+        
+        
+    </form>
+
+       
+
+</object-views>
