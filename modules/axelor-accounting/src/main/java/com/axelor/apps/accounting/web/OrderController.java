@@ -8,11 +8,17 @@ import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 
 public class OrderController {
-    public void generatedInvoiceFromOrder(ActionRequest request, ActionResponse response){
+    public void generateInvoiceFromOrder(ActionRequest request, ActionResponse response){
         Order order = request.getContext().asType(Order.class);
         order = Beans.get(OrderRepository.class).find(order.getId());
         OrderService orderService = Beans.get(OrderService.class);
         orderService.generateInvoiceForOrder(order);
         response.setReload(true);
     }
+
+    public void generateInvoiceForLateOrders(ActionRequest request, ActionResponse response){
+        OrderService orderService = Beans.get(OrderService.class);
+        orderService.generateInvoiceForLateOrders();
+    }
+
 }

@@ -8,6 +8,22 @@
           model="com.axelor.apps.invoicing.db.Invoice"
           id="accounting-invoicing-invoice-form"
           extension="true">
+
+        <extend target="//panel[@name='invoiceInfoPanel']/button[@name='compute']">
+            <attribute name="colSpan" value="4"/>
+        </extend>
+
+        <extend target="//panel[@name='invoiceInfoPanel']/button[@name='validate']">
+            <attribute name="onClick" value="action-accounting-group-validateinvoice"/>
+            <attribute name="colSpan" value="4"/>
+        </extend>
+
+        <extend target="//panel[@name='invoiceInfoPanel']/button[@name='validate']">
+           <insert position="after">
+               <button name="generateAccountingEntry" title="Generate accounting entry" colSpan="4" onClick=""
+                       hideIf="stateSelect == 0"/>
+           </insert>
+        </extend>
         
         <extend target="//panel[@name='invoiceInfoPanel']/field[@name='stateSelect']">
             <insert position="after">
@@ -15,6 +31,16 @@
             </insert>
         </extend>
     </form>
+
+    <action-method name="action-accounting-invoicing-invoice-method-hasemptyaccountininvoiceline">
+        <call class="com.axelor.apps.accounting.web.InvoiceController" method="checkEmptyAccountInInvoiceLines"/>
+    </action-method>
+    
+    <action-group name="action-accounting-group-validateinvoice">
+        <action name="action-accounting-invoicing-invoice-method-hasemptyaccountininvoiceline"/>
+        <action name="action-invoicing-invoice-method-setStateSelectToValidate"/>
+        <action name="save"/>
+    </action-group>
     
 
 

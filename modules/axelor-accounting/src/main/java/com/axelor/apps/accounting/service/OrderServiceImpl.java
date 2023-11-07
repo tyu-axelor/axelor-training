@@ -5,6 +5,8 @@ import com.axelor.apps.invoicing.db.InvoiceLine;
 import com.axelor.apps.sales.db.Order;
 import com.axelor.apps.sales.db.OrderLine;
 import com.axelor.apps.sales.db.repo.OrderRepository;
+import com.axelor.db.JPA;
+import com.axelor.db.Query;
 import com.google.inject.Inject;
 import com.google.inject.persist.Transactional;
 
@@ -20,11 +22,12 @@ public class OrderServiceImpl implements OrderService{
         this.orderRepository = orderRepository;
     }
 
-    @Transactional(rollbackOn = {Exception.class})
-    @Override
     /**
      * This method generates the Invoice
+     * @param curOrder
      */
+    @Transactional(rollbackOn = {Exception.class})
+    @Override
     public void generateInvoiceForOrder(Order curOrder) {
         List<OrderLine> orderLineList = curOrder.getOrderLineList();
         Invoice curInvoice = new Invoice();
@@ -53,10 +56,10 @@ public class OrderServiceImpl implements OrderService{
     }
 
     /**
-     * this method generates the InvoiceLineList field of an Invoice object.
+     * this method generates the InvoiceLineList field of an Invoice object from an orderLineList.
      * @param orderLineList
      * @param invoice
-     * @return
+     * @return generated InvoiceLineList
      */
     @Override
     public List<InvoiceLine> generateInvoiceLineListFromOrderLineList(List<OrderLine> orderLineList, Invoice invoice) {
@@ -77,5 +80,33 @@ public class OrderServiceImpl implements OrderService{
             resultInvoiceLineList.add(invoiceLine);
         }
         return resultInvoiceLineList;
+    }
+
+    @Override
+    public void generateInvoiceForLateOrders() {
+        Query<Order> orderListQuery = orderRepository.all().filter(
+                "self.forecastBillingDate < :curDate AND self.invoice = null"
+        );
+        orderListQuery.bind("curDate", java.time.LocalDate.now());
+
+        int limit = 50;
+        int offSet = 0;
+        List<Order> orderList;
+        do {
+            orderList = orderListQuery.fetch(limit, offSet);
+            if(orderList.isEmpty()) break;
+            else{
+                generateInvoiceForEachLateOrder(orderList);
+                JPA.clear();
+                offSet += limit;
+            }
+        }while (true);
+    }
+
+    @Override
+    public void generateInvoiceForEachLateOrder(List<Order> orderList) {
+        for (Order order : orderList) {
+            generateInvoiceForOrder(order);
+        }
     }
 }

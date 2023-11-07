@@ -3,6 +3,13 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
+    <grid name="sales-orders-grid" title="Sales orders" model="com.axelor.apps.sales.db.Order"
+          id="accounting-sales-orders-grid" extension="true">
+        <extend target="//menubar/menu[@name='ordersToolsMenu']/item[@name='generateInvoiceForLateOrdersItem']">
+            <attribute name="action" value="action-accounting-order-method-generateinvoiceforlateorders"/>
+        </extend>
+    </grid>
+
 
     <form name="sales-orders-form"
 
@@ -10,8 +17,6 @@
           title="Sales orders"
           model="com.axelor.apps.sales.db.Order"
           extension="true">
-
-
 
         <extend target="//panel[@name='orderInfoPanel']/field[@name='forecastBillingDate']">
             <insert position="after">
@@ -28,7 +33,11 @@
     </form>
 
     <action-method name="action-accounting-orders-method-generateinvoice">
-        <call class="com.axelor.apps.accounting.web.OrderController" method="generatedInvoiceFromOrder"/>
+        <call class="com.axelor.apps.accounting.web.OrderController" method="generateInvoiceFromOrder"/>
+    </action-method>
+
+    <action-method name="action-accounting-order-method-generateinvoiceforlateorders">
+        <call class="com.axelor.apps.accounting.web.OrderController" method="generateInvoiceForLateOrders"/>
     </action-method>
 
 

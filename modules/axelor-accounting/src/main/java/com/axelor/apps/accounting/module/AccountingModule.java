@@ -9,6 +9,7 @@ public class AccountingModule extends AxelorModule {
         bind(AccountingEntryService.class).to(AccountingEntryServiceImpl.class);
         bind(InvoiceLineService.class).to(InvoiceLineServiceImpl.class);
         bind(OrderService.class).to(OrderServiceImpl.class);
+        bind(InvoiceService.class).to(InvoiceServiceImpl.class);
 
     }
 }
