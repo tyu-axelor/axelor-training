@@ -2,12 +2,14 @@
 <object-views xmlns="http://axelor.com/xml/ns/object-views"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
-    
+
     <form name="invoicing-invoice-form"
           title="Invoices"
           model="com.axelor.apps.invoicing.db.Invoice"
           id="accounting-invoicing-invoice-form"
-          extension="true">
+          extension="true"
+          onNew="action-accounting-invoice-method-set-hasGeneratedAccountingEntry-default"
+          readonlyIf="stateSelect == 1 || hasGeneratedAccountingEntry == 1">
 
         <extend target="//panel[@name='invoiceInfoPanel']/button[@name='compute']">
             <attribute name="colSpan" value="4"/>
@@ -19,31 +21,60 @@
         </extend>
 
         <extend target="//panel[@name='invoiceInfoPanel']/button[@name='validate']">
-           <insert position="after">
-               <button name="generateAccountingEntry" title="Generate accounting entry" colSpan="4" onClick=""
-                       hideIf="stateSelect == 0"/>
-           </insert>
-        </extend>
-        
-        <extend target="//panel[@name='invoiceInfoPanel']/field[@name='stateSelect']">
             <insert position="after">
-                <field name="customerAccount" title="Customer Account"/>
+                <button name="generateAccountingEntry" title="Generate accounting entry" colSpan="4"
+                        onClick="action-accounting-invoice-method-generate-accounting-entry,save"
+                        hideIf="stateSelect == 0 || hasGeneratedAccountingEntry == 1"/>
             </insert>
         </extend>
+
+        <extend target="//panel[@name='invoiceInfoPanel']/field[@name='customer']">
+            <attribute name="readonlyIf" value="stateSelect == 1"/>
+        </extend>
+
+        <extend target="//panel[@name='invoiceInfoPanel']/field[@name='customer']">
+            <attribute name="readonlyIf" value="stateSelect == 1"/>
+        </extend>
+
+        <extend target="//panel[@name='invoiceInfoPanel']/field[@name='invoiceDate']">
+            <attribute name="readonlyIf" value="stateSelect == 1"/>
+        </extend>
+
+        <extend target="//panel[@name='invoiceInfoPanel']/field[@name='stateSelect']">
+            <insert position="after">
+                <field name="customerAccount" title="Customer Account" readonlyIf="stateSelect == 1" required="true"/>
+            </insert>
+            <insert position="after">
+                <field name="hasGeneratedAccountingEntry" title="Has AccountingEntry Been generated"
+                       hidden="true"/>
+            </insert>
+        </extend>
+
+        <extend target="//panel[@name='contentPanel']">
+            <attribute name="readonlyIf" value="stateSelect == 1"/>
+        </extend>
+
+
     </form>
 
     <action-method name="action-accounting-invoicing-invoice-method-hasemptyaccountininvoiceline">
         <call class="com.axelor.apps.accounting.web.InvoiceController" method="checkEmptyAccountInInvoiceLines"/>
     </action-method>
-    
+
     <action-group name="action-accounting-group-validateinvoice">
         <action name="action-accounting-invoicing-invoice-method-hasemptyaccountininvoiceline"/>
         <action name="action-invoicing-invoice-method-setStateSelectToValidate"/>
         <action name="save"/>
     </action-group>
-    
 
+    <action-method name="action-accounting-invoice-method-generate-accounting-entry">
+        <call class="com.axelor.apps.accounting.web.InvoiceController" method="generateAccountingEntryForInvoice"/>
+    </action-method>
 
-       
+    <action-method name="action-accounting-invoice-method-set-hasGeneratedAccountingEntry-default">
+        <call class="com.axelor.apps.accounting.web.InvoiceController"
+              method="setDefaultValueOfHasGeneratedAccountingEntry"/>
+    </action-method>
+
 
 </object-views>

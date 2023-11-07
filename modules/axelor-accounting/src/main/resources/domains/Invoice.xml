@@ -7,7 +7,7 @@
 
     <entity name="Invoice">
         <many-to-one name="customerAccount" title="Customer Account" ref="com.axelor.apps.accounting.db.Account"/>
-
+        <integer name="hasGeneratedAccountingEntry" title="Has AccountingEntry Been generated" hidden="true"/>
     </entity>
 
 </domain-models>

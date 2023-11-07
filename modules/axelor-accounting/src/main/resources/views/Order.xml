@@ -23,11 +23,10 @@
                 <field name="customerAccount" title="Customer Account"/>
             </insert>
         </extend>
-        
+
         <extend target="//panel[@name='orderInfoPanel']/button[@name='invoice']">
             <attribute name="onClick" value="save,action-accounting-orders-method-generateinvoice"/>
         </extend>
-
 
 
     </form>

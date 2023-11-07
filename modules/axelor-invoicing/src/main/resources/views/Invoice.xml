@@ -16,7 +16,9 @@
           title="Invoices"
           model="com.axelor.apps.invoicing.db.Invoice"
           onNew="action-invoicing-invoice-method-init-invoiceDate"
-          readonlyIf="stateSelect == 1">
+
+    >
+<!--        readonlyIf="stateSelect == 1"-->
 
         <panel name="invoiceInfoPanel" title="Invoice Information" colSpan="12">
 

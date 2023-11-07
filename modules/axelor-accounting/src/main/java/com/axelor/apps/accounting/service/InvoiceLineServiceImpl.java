@@ -6,12 +6,12 @@ import com.axelor.apps.invoicing.db.repo.InvoiceLineRepository;
 import com.axelor.apps.sales.db.Product;
 import com.google.inject.Inject;
 
-public class InvoiceLineServiceImpl implements InvoiceLineService{
+public class InvoiceLineServiceImpl implements InvoiceLineService {
 
     protected InvoiceLineRepository invoiceLineRepository;
 
     @Inject
-    public InvoiceLineServiceImpl(InvoiceLineRepository invoiceLineRepository){
+    public InvoiceLineServiceImpl(InvoiceLineRepository invoiceLineRepository) {
         this.invoiceLineRepository = invoiceLineRepository;
     }
 

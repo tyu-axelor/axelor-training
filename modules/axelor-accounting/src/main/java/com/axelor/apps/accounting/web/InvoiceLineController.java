@@ -10,7 +10,7 @@ import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 
 public class InvoiceLineController {
-    public void setAccountDefaultValue(ActionRequest request, ActionResponse response){
+    public void setAccountDefaultValue(ActionRequest request, ActionResponse response) {
         InvoiceLine invoiceLine = request.getContext().asType(InvoiceLine.class);
         InvoiceLineService invoiceLineService = Beans.get(InvoiceLineService.class);
         Account account = invoiceLineService.setDefaultValueOfAccount(invoiceLine);

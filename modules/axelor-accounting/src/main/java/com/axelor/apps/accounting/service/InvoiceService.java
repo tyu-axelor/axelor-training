@@ -4,4 +4,6 @@ import com.axelor.apps.invoicing.db.Invoice;
 
 public interface InvoiceService {
     public boolean hasEmptyAccountInInvoiceLines(Invoice invoice);
+
+    public void generateAccountingEntryForInvoice(Invoice invoice);
 }

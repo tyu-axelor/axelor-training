@@ -7,12 +7,12 @@ import com.google.inject.Inject;
 
 import java.math.BigDecimal;
 
-public class AccountingEntryServiceImpl implements AccountingEntryService{
+public class AccountingEntryServiceImpl implements AccountingEntryService {
 
     protected AccountingEntryRepository accountingEntryRepository;
 
     @Inject
-    public AccountingEntryServiceImpl(AccountingEntryRepository accountingEntryRepository){
+    public AccountingEntryServiceImpl(AccountingEntryRepository accountingEntryRepository) {
         this.accountingEntryRepository = accountingEntryRepository;
 
 

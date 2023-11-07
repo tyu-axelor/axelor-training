@@ -13,18 +13,19 @@ import com.google.inject.persist.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
     protected OrderRepository orderRepository;
 
 
     @Inject
-    public OrderServiceImpl(OrderRepository orderRepository){
+    public OrderServiceImpl(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
 
     /**
      * This method generates the Invoice
-     * @param curOrder
+     *
+     * @param curOrder: the order which is used to generate invoice
      */
     @Transactional(rollbackOn = {Exception.class})
     @Override
@@ -42,23 +43,19 @@ public class OrderServiceImpl implements OrderService{
         //set the customerAccount field in an Invoice Object
         curInvoice.setCustomerAccount(curOrder.getCustomerAccount());
 
-
         curInvoice.setOrders(curOrder);
         curOrder.setInvoice(curInvoice);
         curOrder.setBillingDate(curInvoice.getInvoiceDate());
 
-
-
-
         orderRepository.save(curOrder);
-
 
     }
 
     /**
      * this method generates the InvoiceLineList field of an Invoice object from an orderLineList.
-     * @param orderLineList
-     * @param invoice
+     *
+     * @param orderLineList : the list of orderLines, used to copy data to a invoiceLine list.
+     * @param invoice : the invoice to which the invoiceLine list belongs
      * @return generated InvoiceLineList
      */
     @Override
@@ -94,13 +91,13 @@ public class OrderServiceImpl implements OrderService{
         List<Order> orderList;
         do {
             orderList = orderListQuery.fetch(limit, offSet);
-            if(orderList.isEmpty()) break;
-            else{
+            if (orderList.isEmpty()) break;
+            else {
                 generateInvoiceForEachLateOrder(orderList);
                 JPA.clear();
                 offSet += limit;
             }
-        }while (true);
+        } while (true);
     }
 
     @Override

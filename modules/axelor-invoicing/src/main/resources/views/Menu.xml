@@ -8,7 +8,7 @@
 
     <menuitem name="invoicing-root-invoice-invoices"
               parent="invoicing-root-invoice"
-              title="All Invoices"
+              title="Invoices"
               action="invoicing.root.invoice.invoices"/>
 
     <action-view name="invoicing.root.invoice.invoices"

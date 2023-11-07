@@ -16,8 +16,6 @@
   ]]>
         </string>
 
-        <one-to-one name="accountingEntryLine" ref="com.axelor.apps.accounting.db.AccountingEntryLine" mappedBy="account"/>
-
     </entity>
 
 </domain-models>

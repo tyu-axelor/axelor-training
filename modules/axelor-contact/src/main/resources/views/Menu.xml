@@ -8,16 +8,16 @@
 
     <menuitem name="menu-contact-friends"
               parent="menu-contact-root"
-              title="All Contacts"
+              title="Contacts"
               action="contact.all"/>
 
 
 
-    <menuitem name="menu-contact-titles" title="All Titles" parent="menu-contact-root" action="title.all"/>
+    <menuitem name="menu-contact-titles" title="Titles" parent="menu-contact-root" action="title.all"/>
 
-    <menuitem name="menu-contact-addresses" title="All Addresses" parent="menu-contact-root" action="address.all"/>
+    <menuitem name="menu-contact-addresses" title="Addresses" parent="menu-contact-root" action="address.all"/>
 
-    <menuitem name="menu-contact-countries" title="All Countries" parent="menu-contact-root" action="country.all"/>
+    <menuitem name="menu-contact-countries" title="Countries" parent="menu-contact-root" action="country.all"/>
 
     <action-view name="contact.all"
                  title="Contacts"

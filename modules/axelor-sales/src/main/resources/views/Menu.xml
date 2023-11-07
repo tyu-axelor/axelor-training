@@ -8,17 +8,17 @@
 
     <menuitem name="sales-root-sales-orders"
               parent="sales-root-sales"
-              title="All Sales Orders"
+              title="Sales Orders"
               action="sales.root.sales.orders"/>
 
     <menuitem name="sales-root-sales-product"
               parent="sales-root-sales"
-              title="All Products"
+              title="Products"
               action="sales.root.sales.product"/>
 
     <menuitem name="sales-root-sales-orderLine"
               parent="sales-root-sales"
-              title="All Order Lines"
+              title="Order Lines"
               action="sales.root.sales.orderLine"/>
 
 

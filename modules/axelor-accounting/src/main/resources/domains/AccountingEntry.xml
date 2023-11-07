@@ -7,11 +7,9 @@
 
     <entity name="AccountingEntry">
         <date name="invoiceDate" title="Invoice's Date"/>
-        <one-to-many name="accountingEntryLineList" title="AccountingEntry Lines" ref="com.axelor.apps.accounting.db.AccountingEntryLine"
-        mappedBy="accountingEntry"/>
-
-
-
+        <one-to-many name="accountingEntryLineList" title="AccountingEntry Lines"
+                     ref="com.axelor.apps.accounting.db.AccountingEntryLine"
+                     mappedBy="accountingEntry"/>
     </entity>
 
 </domain-models>

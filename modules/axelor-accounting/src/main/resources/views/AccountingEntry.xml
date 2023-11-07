@@ -10,9 +10,7 @@
         <field name="accountingEntryLineList" title="AccountingEntry Lines"
                grid-view="accounting-accountingEntryLine-grid" form-view="accounting-accountingEntryLine-form"/>
 
-
     </grid>
-
 
     <form name="accounting-accountingEntry-form"
           title="AccountEntry Info"
@@ -30,6 +28,5 @@
     <action-method name="action-accounting-accountingEntry-method-checkDebitAndCredit">
         <call class="com.axelor.apps.accounting.web.AccountingEntryController" method="checkDebitAndCredit"/>
     </action-method>
-
 
 </object-views>

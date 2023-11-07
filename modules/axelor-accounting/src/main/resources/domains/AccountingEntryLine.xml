@@ -6,8 +6,9 @@
     <module name="accounting" package="com.axelor.apps.accounting.db"/>
 
     <entity name="AccountingEntryLine">
-        <many-to-one name="accountingEntry" title="Accounting Entry" ref="com.axelor.apps.accounting.db.AccountingEntry"/>
-        <one-to-one name="account" ref="com.axelor.apps.accounting.db.Account" title="Account"/>
+        <many-to-one name="accountingEntry" title="Accounting Entry"
+                     ref="com.axelor.apps.accounting.db.AccountingEntry"/>
+        <many-to-one name="account" ref="com.axelor.apps.accounting.db.Account" title="Account"/>
 
         <decimal name="debit" title="Debit"/>
         <decimal name="credit" title="Credit"/>
