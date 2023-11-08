@@ -9,7 +9,8 @@
             <insert position="before">
                 <menubar>
                     <menu name="ordersToolsMenu" title="Order Tools" icon="fa-wrench" showTitle="true">
-                        <item name="generateInvoiceForLateOrdersItem" title="Generate Invoice For Late Orders" action="action-invoicing-order-method-generateInvoiceForLateOrders"/>
+                        <item name="generateInvoiceForLateOrdersItem" title="Generate Invoice For Late Orders"
+                              action="action-invoicing-order-method-generateInvoiceForLateOrders"/>
                     </menu>
                 </menubar>
 
@@ -58,7 +59,7 @@
 
         <extend target="//panel[@name='orderInfoPanel']/field[@name='total']">
             <insert position="after">
-                <field name="forecastBillingDate" title="Forecasted Billing Date"/>
+                <field name="forecastBillingDate" title="Forecasted Billing Date" readonlyIf="stateSelect == 1"/>
             </insert>
         </extend>
 

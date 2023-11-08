@@ -5,14 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/db/repo/AccountingAccountingEntryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceLineServiceAccounting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceServiceAccounting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/service/InvoiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/service/InvoiceServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/AccountingEntryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/AccountingEntryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/AccountingEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/AccountingEntryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/module/AccountingModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/module/AccountingModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceLineService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceLineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceLineServiceAccountingImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceServiceAccountingImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/OrderServiceAccountingImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/InvoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Account.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/InvoiceLineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/InvoiceLineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Order.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/module/InvoicingModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/java/com/axelor/apps/invoicing/module/InvoicingModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/views/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/views/Order.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/views/Menu.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +59,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -255,7 +266,7 @@
       <workItem from="1699299936913" duration="8445000" />
       <workItem from="1699364359892" duration="4321000" />
       <workItem from="1699368690486" duration="16353000" />
-      <workItem from="1699450568071" duration="7794000" />
+      <workItem from="1699450568071" duration="16946000" />
     </task>
     <servers />
   </component>

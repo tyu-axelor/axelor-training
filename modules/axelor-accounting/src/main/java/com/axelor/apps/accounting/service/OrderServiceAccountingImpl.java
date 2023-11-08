@@ -2,6 +2,8 @@ package com.axelor.apps.accounting.service;
 
 import com.axelor.apps.invoicing.db.Invoice;
 import com.axelor.apps.invoicing.db.InvoiceLine;
+import com.axelor.apps.invoicing.db.repo.InvoiceRepository;
+import com.axelor.apps.invoicing.service.OrderServiceImpl;
 import com.axelor.apps.sales.db.Order;
 import com.axelor.apps.sales.db.OrderLine;
 import com.axelor.apps.sales.db.repo.OrderRepository;
@@ -13,13 +15,11 @@ import com.google.inject.persist.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderServiceImpl implements OrderService {
-    protected OrderRepository orderRepository;
-
+public class OrderServiceAccountingImpl extends OrderServiceImpl {
 
     @Inject
-    public OrderServiceImpl(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
+    public OrderServiceAccountingImpl(OrderRepository orderRepository, InvoiceRepository invoiceRepository) {
+        super(orderRepository, invoiceRepository);
     }
 
     /**
@@ -29,7 +29,7 @@ public class OrderServiceImpl implements OrderService {
      */
     @Transactional(rollbackOn = {Exception.class})
     @Override
-    public void generateInvoiceForOrder(Order curOrder) {
+    public Order generateInvoiceForTheOrder(Order curOrder) {
         List<OrderLine> orderLineList = curOrder.getOrderLineList();
         Invoice curInvoice = new Invoice();
         List<InvoiceLine> generatedInvoiceLineList = generateInvoiceLineListFromOrderLineList(orderLineList, curInvoice);
@@ -48,6 +48,8 @@ public class OrderServiceImpl implements OrderService {
         curOrder.setBillingDate(curInvoice.getInvoiceDate());
 
         orderRepository.save(curOrder);
+
+        return curOrder;
 
     }
 
@@ -79,8 +81,9 @@ public class OrderServiceImpl implements OrderService {
         return resultInvoiceLineList;
     }
 
+
     @Override
-    public void generateInvoiceForLateOrders() {
+    public void generateInvoiceForLateOrder() {
         Query<Order> orderListQuery = orderRepository.all().filter(
                 "self.forecastBillingDate < :curDate AND self.invoice = null"
         );
@@ -93,17 +96,10 @@ public class OrderServiceImpl implements OrderService {
             orderList = orderListQuery.fetch(limit, offSet);
             if (orderList.isEmpty()) break;
             else {
-                generateInvoiceForEachLateOrder(orderList);
+                generateInvoiceForEachOrder(orderList);
                 JPA.clear();
                 offSet += limit;
             }
         } while (true);
-    }
-
-    @Override
-    public void generateInvoiceForEachLateOrder(List<Order> orderList) {
-        for (Order order : orderList) {
-            generateInvoiceForOrder(order);
-        }
     }
 }

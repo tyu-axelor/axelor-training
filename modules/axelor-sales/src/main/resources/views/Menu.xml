@@ -16,10 +16,10 @@
               title="Products"
               action="sales.root.sales.product"/>
 
-    <menuitem name="sales-root-sales-orderLine"
-              parent="sales-root-sales"
-              title="Order Lines"
-              action="sales.root.sales.orderLine"/>
+<!--    <menuitem name="sales-root-sales-orderLine"-->
+<!--              parent="sales-root-sales"-->
+<!--              title="Order Lines"-->
+<!--              action="sales.root.sales.orderLine"/>-->
 
 
     <action-view name="sales.root.sales.orders"
@@ -36,11 +36,11 @@
         <view type="form" name="sales-product-form"/>
     </action-view>
 
-    <action-view name="sales.root.sales.orderLine"
-                 title="Order Lines"
-                 model="com.axelor.apps.sales.db.OrderLine">
-        <view type="grid" name="sales-orderLine-grid"/>
-        <view type="form" name="sales-orderLine-form"/>
-    </action-view>
+<!--    <action-view name="sales.root.sales.orderLine"-->
+<!--                 title="Order Lines"-->
+<!--                 model="com.axelor.apps.sales.db.OrderLine">-->
+<!--        <view type="grid" name="sales-orderLine-grid"/>-->
+<!--        <view type="form" name="sales-orderLine-form"/>-->
+<!--    </action-view>-->
 
 </object-views>

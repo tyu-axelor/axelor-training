@@ -6,6 +6,7 @@ import com.axelor.apps.accounting.db.repo.AccountingAccountingEntryRepository;
 import com.axelor.apps.invoicing.db.Invoice;
 import com.axelor.apps.invoicing.db.InvoiceLine;
 import com.axelor.apps.invoicing.db.repo.InvoiceRepository;
+import com.axelor.apps.invoicing.service.InvoiceServiceImpl;
 import com.axelor.inject.Beans;
 import com.google.inject.Inject;
 import com.google.inject.persist.Transactional;
@@ -13,12 +14,12 @@ import com.google.inject.persist.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InvoiceServiceImpl implements InvoiceService {
+public class InvoiceServiceAccountingImpl extends InvoiceServiceImpl implements InvoiceServiceAccounting{
     protected InvoiceRepository invoiceRepository;
     protected AccountingAccountingEntryRepository accountingAccountingEntryRepositoryEntryRepository;
 
     @Inject
-    public InvoiceServiceImpl(InvoiceRepository invoiceRepository, AccountingAccountingEntryRepository accountingAccountingEntryRepositoryEntryRepository) {
+    public InvoiceServiceAccountingImpl(InvoiceRepository invoiceRepository, AccountingAccountingEntryRepository accountingAccountingEntryRepositoryEntryRepository) {
         this.invoiceRepository = invoiceRepository;
         this.accountingAccountingEntryRepositoryEntryRepository = accountingAccountingEntryRepositoryEntryRepository;
     }

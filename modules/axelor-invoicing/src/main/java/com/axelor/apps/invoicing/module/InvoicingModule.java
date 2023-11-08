@@ -8,5 +8,6 @@ public class InvoicingModule extends AxelorModule {
     protected void configure() {
         bind(OrderService.class).to(OrderServiceImpl.class);
         bind(InvoiceLineService.class).to(InvoiceLineServiceImpl.class);
+        bind(InvoiceService.class).to(InvoiceServiceImpl.class);
     }
 }

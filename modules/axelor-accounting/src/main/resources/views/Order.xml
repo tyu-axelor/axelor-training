@@ -3,12 +3,12 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
-    <grid name="sales-orders-grid" title="Sales orders" model="com.axelor.apps.sales.db.Order"
-          id="accounting-sales-orders-grid" extension="true">
-        <extend target="//menubar/menu[@name='ordersToolsMenu']/item[@name='generateInvoiceForLateOrdersItem']">
-            <attribute name="action" value="action-accounting-order-method-generateinvoiceforlateorders"/>
-        </extend>
-    </grid>
+<!--    <grid name="sales-orders-grid" title="Sales orders" model="com.axelor.apps.sales.db.Order"-->
+<!--          id="accounting-sales-orders-grid" extension="true">-->
+<!--        <extend target="//menubar/menu[@name='ordersToolsMenu']/item[@name='generateInvoiceForLateOrdersItem']">-->
+<!--            <attribute name="action" value="action-accounting-order-method-generateinvoiceforlateorders"/>-->
+<!--        </extend>-->
+<!--    </grid>-->
 
 
     <form name="sales-orders-form"
@@ -20,7 +20,7 @@
 
         <extend target="//panel[@name='orderInfoPanel']/field[@name='forecastBillingDate']">
             <insert position="after">
-                <field name="customerAccount" title="Customer Account"/>
+                <field name="customerAccount" title="Customer Account" required="true" readonlyIf="stateSelect == 1"/>
             </insert>
         </extend>
 
@@ -30,14 +30,13 @@
 
 
     </form>
+<!--    <action-method id="accounting-action-invoicing-order-method-add-invoice" name="action-invoicing-order-method-add-invoice">-->
+<!--        <call class="com.axelor.apps.accounting.web.OrderController" method="generateInvoiceFromOrder"/>-->
+<!--    </action-method>-->
 
-    <action-method id="accounting-action-invoicing-order-method-add-invoice" name="action-invoicing-order-method-add-invoice">
-        <call class="com.axelor.apps.accounting.web.OrderController" method="generateInvoiceFromOrder"/>
-    </action-method>
-
-    <action-method name="action-accounting-order-method-generateinvoiceforlateorders">
-        <call class="com.axelor.apps.accounting.web.OrderController" method="generateInvoiceForLateOrders"/>
-    </action-method>
+<!--    <action-method name="action-accounting-order-method-generateinvoiceforlateorders">-->
+<!--        <call class="com.axelor.apps.accounting.web.OrderController" method="generateInvoiceForLateOrders"/>-->
+<!--    </action-method>-->
 
 
 </object-views>
