@@ -28,7 +28,7 @@ public class AccountingEntryServiceImpl implements AccountingEntryService {
             debitSum = debitSum.add(accountingEntryLine.getDebit());
             creditSum = creditSum.add(accountingEntryLine.getCredit());
         }
-        return debitSum.equals(creditSum);
+        return debitSum.compareTo(creditSum) == 0;
 
 
     }

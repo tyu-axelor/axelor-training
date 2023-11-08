@@ -18,7 +18,7 @@ public class AccountingEntryController {
         AccountingEntryService accountingEntryService = Beans.get(AccountingEntryService.class);
         boolean isEqual = accountingEntryService.isSumOfDebitEqualsSumOfCredit(accountingEntry);
         if (!isEqual) {
-            response.setInfo("The sum of debit is not equal to the sum of credit!");
+            response.setError("The sum of debit is not equal to the sum of credit!");
         }
     }
 }

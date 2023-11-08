@@ -15,12 +15,12 @@
 
     <form name="accounting-account-form"
           title="Account Info"
-          model="com.axelor.apps.accounting.db.Account">
+          model="com.axelor.apps.accounting.db.Account"
+          canEdit="false">
 
         <panel name="accountPanel" title="Account Info" colSpan="12" showTitle="false">
             <field name="name" title="Name" colSpan="6"/>
             <field name="code" title="Code" colSpan="6"/>
-            <field name="fullName" title="Full Name" colSpan="6"/>
         </panel>
 
     </form>

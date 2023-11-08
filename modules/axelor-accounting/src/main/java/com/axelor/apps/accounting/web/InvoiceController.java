@@ -23,7 +23,7 @@ public class InvoiceController {
         Invoice invoice = context.asType(Invoice.class);
         InvoiceService invoiceService = Beans.get(InvoiceService.class);
         invoiceService.generateAccountingEntryForInvoice(invoice);
-        response.setValue("hasGeneratedAccountingEntry", 1);
+        response.setReload(true);
     }
 
     public void setDefaultValueOfHasGeneratedAccountingEntry(ActionRequest request, ActionResponse response) {

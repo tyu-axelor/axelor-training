@@ -24,14 +24,14 @@
             </insert>
         </extend>
 
-        <extend target="//panel[@name='orderInfoPanel']/button[@name='invoice']">
-            <attribute name="onClick" value="save,action-accounting-orders-method-generateinvoice"/>
-        </extend>
+<!--        <extend target="//panel[@name='orderInfoPanel']/button[@name='invoice']">-->
+<!--            <attribute name="onClick" value="save,action-accounting-orders-method-generateinvoice"/>-->
+<!--        </extend>-->
 
 
     </form>
 
-    <action-method name="action-accounting-orders-method-generateinvoice">
+    <action-method id="accounting-action-invoicing-order-method-add-invoice" name="action-invoicing-order-method-add-invoice">
         <call class="com.axelor.apps.accounting.web.OrderController" method="generateInvoiceFromOrder"/>
     </action-method>
 

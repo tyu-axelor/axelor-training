@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/db/repo/AccountingAccountingEntryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/AccountingEntryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/AccountingEntryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/service/InvoiceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/AccountingEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/AccountingEntryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/java/com/axelor/apps/accounting/web/InvoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Account.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Order.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +255,7 @@
       <workItem from="1699299936913" duration="8445000" />
       <workItem from="1699364359892" duration="4321000" />
       <workItem from="1699368690486" duration="16353000" />
-      <workItem from="1699450568071" duration="1812000" />
+      <workItem from="1699450568071" duration="7794000" />
     </task>
     <servers />
   </component>
