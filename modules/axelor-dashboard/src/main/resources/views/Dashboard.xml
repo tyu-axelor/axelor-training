@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <dashboard title="Monitoring Dashboard" name="dashboard.training.monitoring">
+        <dashlet action="dashlet.orders.tobeinvoiced"/>
+    </dashboard>
+
+    <action-view name="dashlet.orders.tobeinvoiced" title="Orders to be invoiced" id="com.axelor.apps.sales.db.Order">
+        <view type="grid" name="sales-orders-grid"/>
+        <view type="form" name="sales-orders-form"/>
+
+    </action-view>
+
+</object-views>

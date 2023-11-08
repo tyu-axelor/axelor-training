@@ -43,4 +43,6 @@ include 'modules:axelor-invoicing'
 findProject(':modules:axelor-invoicing')?.name = 'axelor-invoicing'
 include 'modules:axelor-accounting'
 findProject(':modules:axelor-accounting')?.name = 'axelor-accounting'
+include 'modules:axelor-dashboard'
+findProject(':modules:axelor-dashboard')?.name = 'axelor-dashboard'
 

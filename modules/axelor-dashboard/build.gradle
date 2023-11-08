@@ -1,0 +1,14 @@
+plugins {
+    id 'com.axelor.app'
+}
+
+axelor {
+    title = "Axelor Invoicing"
+}
+
+dependencies {
+    api project(":modules:axelor-contact")
+    api project(":modules:axelor-sales")
+    api project(":modules:axelor-invoicing")
+    api project(":modules:axelor-accounting")
+}
