@@ -3,7 +3,9 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_6.1.xsd">
 
-    <chart name="chart.sales.distribution.by.product.by.month" title="Product Sales Distribution By Month">
+    <chart name="chart.sales.distribution.by.product.by.month" title="Product Sales Distribution By Month"
+            onInit="action-accounting-chart-set-date"
+    >
         <search-fields>
             <field type="date" name="queryDate" title="Query Date"/>
         </search-fields>
@@ -30,9 +32,63 @@
 
         ]]>
         </dataset>
-        <category key="names" type="text"/>
-        <series key="quantity" type="bar"/>
+        <category key="names" type="text" title="Product Categories"/>
+        <series key="quantity" type="bar" title="Quantity"/>
     </chart>
+
+    <chart title="Sales Quantity Per Product Family" name="chart.sales.quantities.per.productfamily">
+        <dataset type="jpql">
+        <![CDATA[
+
+        Select
+            pf.name as product_family_name, SUM(orderline.qty) as quantity
+
+        From
+            OrderLine as orderline
+            left join
+            Product as product
+            ON orderline.product = product.id
+            left join
+            ProductFamily as pf
+            ON product.productFamily = pf.id
+        Group by
+            pf.name
+        Order by
+            pf.name
+
+
+
+
+        ]]>
+        </dataset>
+        <category key="product_family_name" type="text" title="Product Family"/>
+        <series key="quantity" type="bar" title="Quantity"/>
+    </chart>
+
+    <chart name="chart.account.accounting.balance" title="Accounting Balance For Each Account">
+        <dataset type="jpql">
+        <![CDATA[
+        Select
+            SUM(ael.debit) - SUM(ael.credit) as accounting_balance,
+            acc1.fullName as account_name
+        From
+            AccountingEntryLine as ael
+            left join Account as acc1
+            ON ael.account = acc1.id
+        Group by
+            acc1.fullName
+        Order by
+            acc1.fullName
+
+        ]]>
+        </dataset>
+        <category key="account_name" type="text" title="Account Name"/>
+        <series key="accounting_balance" type="bar" title="Accounting Balance"/>
+    </chart>
+
+    <action-record name="action-accounting-chart-set-date" model="com.axelor.apps.sales.db.Order">
+        <field name="queryDate" expr="eval:__date__"/>
+    </action-record>
 
 
 </object-views>

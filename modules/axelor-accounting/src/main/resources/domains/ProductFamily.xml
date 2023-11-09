@@ -3,11 +3,11 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://axelor.com/xml/ns/domain-models https://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
 
-    <module name="sales" package="com.axelor.apps.sales.db"/>
+    <module name="accounting" package="com.axelor.apps.accounting.db"/>
 
-    <entity name="Product">
-        <many-to-one name="account" ref="com.axelor.apps.accounting.db.Account"/>
-        <many-to-one name="productFamily" ref="com.axelor.apps.accounting.db.ProductFamily"/>
+    <entity name="ProductFamily">
+        <string name="name" title="Name"/>
+        <string name="code" title="Code"/>
     </entity>
 
 

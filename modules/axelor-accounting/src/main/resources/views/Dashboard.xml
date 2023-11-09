@@ -7,14 +7,24 @@
         <dashlet action="dashlet.orders.tobeinvoiced" height="350" colSpan="12"/>
         <dashlet action="dashlet.invoices.tobevalidated" height="350" colSpan="12"/>
         <dashlet action="dashlet.orders.distribution" height="350" colSpan="12"/>
+        <dashlet action="dashlet.sales.quantities.per.productfamily" height="350" colSpan="12"/>
+        <dashlet action="dashlet.account.accounting.balance" height="350" colSpan="12"/>
     </dashboard>
 
-    <action-view name="dashlet.orders.distribution" title="Product Sales Distribution">
+    <action-view name="dashlet.account.accounting.balance" title="Accounting Balance">
+        <view type="chart" name="chart.account.accounting.balance"/>
+    </action-view>
+
+    <action-view name="dashlet.sales.quantities.per.productfamily" title="Sales Quantity Per Product Family">
+        <view type="chart" name="chart.sales.quantities.per.productfamily"/>
+    </action-view>
+
+    <action-view name="dashlet.orders.distribution" title="Monthly Product Sales Distribution">
         <view type="chart" name="chart.sales.distribution.by.product.by.month"/>
     </action-view>
 
     <action-view name="dashlet.orders.tobeinvoiced" title="Orders to be invoiced" model="com.axelor.apps.sales.db.Order">
-        <view type="grid" name="sales-orders-grid"/>
+        <view type="grid" name="accounting-sales-orders-dashlet-grid"/>
         <view type="form" name="sales-orders-form"/>
         <domain>
             self.invoice = null

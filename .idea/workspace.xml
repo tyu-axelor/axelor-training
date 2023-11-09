@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Charts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Dashboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/ProductFamily.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/ProductFamily.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/domains/Product.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Charts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Charts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Dashboard.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-dashboard/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-dashboard/src/main/resources/views/Dashboard.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-dashboard/src/main/resources/views/Menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Order.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Product.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/views/Order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/views/Order.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +110,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.82">
+  <component name="RunManager" selected="Gradle.axelor-training [build]">
     <configuration name="axelor-training [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -263,7 +262,7 @@
       <workItem from="1699368690486" duration="16353000" />
       <workItem from="1699450568071" duration="22644000" />
       <workItem from="1699537278629" duration="1426000" />
-      <workItem from="1699538715056" duration="9656000" />
+      <workItem from="1699538715056" duration="24343000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,14 @@
 <!--            <attribute name="action" value="action-accounting-order-method-generateinvoiceforlateorders"/>-->
 <!--        </extend>-->
 <!--    </grid>-->
+    <grid name="accounting-sales-orders-dashlet-grid" title="Sales Orders" model="com.axelor.apps.sales.db.Order">
+<!--        <hilite background="red" if="forecastBillingDate &lt; __date__"/>-->
+        <hilite background="red" if="$moment(todayDate).diff(forecastBillingDate) &gt; 0"/>
+        <field name="forecastBillingDate" title="Forecast Billing Date"/>
+        <field name="customer" form-view="contact-form" grid-view="contact-grid"/>
+        <field name="orderDate" title="Order's date" required="true"/>
+        <field name="confirmationDate" title="Confirmation date"/>
+    </grid>
 
 
     <form name="sales-orders-form"

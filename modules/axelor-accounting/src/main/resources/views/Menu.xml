@@ -16,6 +16,10 @@
               title="AccountingEntries"
               action="accounting.root.accountingEntry"/>
 
+    <menuitem name="accounting-sales-productfamily" title="Product Family"
+              parent="sales-root-sales"
+              action="accounting.sales.productfamily"/>
+
     <menuitem name="dashboard-root"
               title="Dashboard"/>
 
@@ -40,6 +44,12 @@
                  model="com.axelor.apps.accounting.db.AccountingEntry">
         <view type="grid" name="accounting-accountingEntry-grid"/>
         <view type="form" name="accounting-accountingEntry-form"/>
+    </action-view>
+
+    <action-view name="accounting.sales.productfamily" title="Product Family"
+                 model="com.axelor.apps.accounting.db.ProductFamily">
+        <view type="grid" name="accounting-productfamily-grid"/>
+        <view type="form" name="accounting-productfamily-form"/>
     </action-view>
 
     <!--    <action-view name="accounting.root.accountingEntryLine"-->
