@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_6.1.xsd">
+
+    <chart name="chart.sales.distribution.by.product.by.month" title="Product Sales Distribution By Month">
+        <search-fields>
+            <field type="date" name="queryDate" title="Query Date"/>
+        </search-fields>
+        <dataset type="jpql">
+        <![CDATA[
+        Select
+            products.name as names,
+            SUM(orderlines.qty) as quantity
+        From
+            Order as salesorders
+            left join
+            OrderLine AS orderlines
+            On salesorders.id = orderlines.orders
+            left join
+            Product as products
+            ON orderlines.product = products.id
+        Where
+            EXTRACT(MONTH from salesorders.orderDate) = EXTRACT(MONTH from DATE(:queryDate))
+        Group by
+            products.id,
+            products.name
+        Order by
+            products.name
+
+        ]]>
+        </dataset>
+        <category key="names" type="text"/>
+        <series key="quantity" type="bar"/>
+    </chart>
+
+
+</object-views>

@@ -5,6 +5,12 @@
 
     <grid name="sales-orders-grid" title="Sales orders" model="com.axelor.apps.sales.db.Order"
           id="invoice-sales-orders-grid" extension="true">
+
+<!--        <extend target="/">-->
+<!--            <insert position="after">-->
+<!--                <hilite if="forecastBillingDate &lt; 'eval:__date__'" color="red"/>-->
+<!--            </insert>-->
+<!--        </extend>-->
         <extend target="//field[@name='customer']">
             <insert position="before">
                 <menubar>

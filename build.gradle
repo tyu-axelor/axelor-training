@@ -23,6 +23,5 @@ dependencies {
     api project(':modules:axelor-sales')
     api project(':modules:axelor-invoicing')
     api project(':modules:axelor-accounting')
-    api project(':modules:axelor-dashboard')
 
 }

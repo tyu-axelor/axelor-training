@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <dashboard title="Monitoring Dashboard" name="dashboard.training.monitoring">
+        <dashlet action="dashlet.orders.tobeinvoiced" height="350" colSpan="12"/>
+        <dashlet action="dashlet.invoices.tobevalidated" height="350" colSpan="12"/>
+        <dashlet action="dashlet.orders.distribution" height="350" colSpan="12"/>
+    </dashboard>
+
+    <action-view name="dashlet.orders.distribution" title="Product Sales Distribution">
+        <view type="chart" name="chart.sales.distribution.by.product.by.month"/>
+    </action-view>
+
+    <action-view name="dashlet.orders.tobeinvoiced" title="Orders to be invoiced" model="com.axelor.apps.sales.db.Order">
+        <view type="grid" name="sales-orders-grid"/>
+        <view type="form" name="sales-orders-form"/>
+        <domain>
+            self.invoice = null
+        </domain>
+    </action-view>
+
+    <action-view name="dashlet.invoices.tobevalidated" title="Invoices to be validated" model="com.axelor.apps.invoicing.db.Invoice">
+        <view type="grid" name="invoicing-invoice-grid"/>
+        <view type="form" name="invoicing-invoice-form"/>
+        <domain>
+            self.stateSelect != 1
+        </domain>
+    </action-view>
+
+</object-views>

@@ -16,10 +16,17 @@
               title="AccountingEntries"
               action="accounting.root.accountingEntry"/>
 
-    <!--    <menuitem name="accounting-root-accountingEntryLine"-->
-    <!--              parent="accounting-root"-->
-    <!--              title="All AccountingEntryLines"-->
-    <!--              action="accounting.root.accountingEntryLine"/>-->
+    <menuitem name="dashboard-root"
+              title="Dashboard"/>
+
+    <menuitem name="dashboard-root-monitoring-dashboard"
+              parent="dashboard-root"
+              title="Monitoring Dashboard"
+              action="dashboard.dashboard.general.report"/>
+
+    <action-view name="dashboard.dashboard.general.report" title="Monitoring Dashboard">
+        <view type="dashboard" name="dashboard.training.monitoring"/>
+    </action-view>
 
     <action-view name="accounting.root.account"
                  title="Account"
