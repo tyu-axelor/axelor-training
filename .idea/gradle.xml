@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/modules" />
             <option value="$PROJECT_DIR$/modules/axelor-accounting" />
             <option value="$PROJECT_DIR$/modules/axelor-contact" />
+            <option value="$PROJECT_DIR$/modules/axelor-events" />
             <option value="$PROJECT_DIR$/modules/axelor-invoicing" />
             <option value="$PROJECT_DIR$/modules/axelor-sales" />
           </set>

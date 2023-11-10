@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages_zh.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Selects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/i18n/messages_zh.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/i18n/messages_zh.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/i18n/messages_zh.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Event.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages_en.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages_en.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages_fr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/i18n/messages_fr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/i18n/messages_fr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/i18n/messages_fr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +88,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/teng/Documents/Projects/axelor-training/modules/axelor-dashboard/src/main/java/com/axelor/Main.java",
+    "onboarding.tips.debug.path": "/home/teng/Documents/Projects/axelor-training/modules/axelor-events/src/main/java/com/axelor/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -267,7 +261,7 @@
       <workItem from="1699450568071" duration="22644000" />
       <workItem from="1699537278629" duration="1426000" />
       <workItem from="1699538715056" duration="25837000" />
-      <workItem from="1699624518368" duration="11913000" />
+      <workItem from="1699624518368" duration="13144000" />
     </task>
     <servers />
   </component>
