@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages_zh.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Selects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/i18n/messages_zh.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/i18n/messages_zh.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/i18n/messages_zh.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages_en.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages_en.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages_fr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/i18n/messages_fr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/i18n/messages_fr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/i18n/messages_fr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/i18n/messages_fr.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +98,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Template Data Languages",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -100,9 +106,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/i18n" />
       <recent name="$PROJECT_DIR$/modules/axelor-invoicing/src/main/resources/i18n" />
+      <recent name="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/i18n" />
       <recent name="$PROJECT_DIR$/modules/axelor-contact/src/main/resources/i18n" />
       <recent name="$PROJECT_DIR$/gradle/wrapper" />
-      <recent name="gradle-wrapper.properties gradle-wrapper.jar" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -261,7 +267,7 @@
       <workItem from="1699450568071" duration="22644000" />
       <workItem from="1699537278629" duration="1426000" />
       <workItem from="1699538715056" duration="25837000" />
-      <workItem from="1699624518368" duration="5738000" />
+      <workItem from="1699624518368" duration="11913000" />
     </task>
     <servers />
   </component>
