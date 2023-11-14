@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Event.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Selects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/db/repo/EventEventRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/module/EventModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/web/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-events/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Event.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/User.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Event.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,9 +49,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
-        <option value="Interface" />
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -264,7 +265,7 @@
       <workItem from="1699537278629" duration="1426000" />
       <workItem from="1699538715056" duration="25837000" />
       <workItem from="1699624518368" duration="16393000" />
-      <workItem from="1699968842308" duration="11850000" />
+      <workItem from="1699968842308" duration="26982000" />
     </task>
     <servers />
   </component>

@@ -11,7 +11,7 @@
 
         <datetime name="startDate" title="Start Date"/>
         <datetime name="endDate" title="End Date"/>
-        <integer name="duration" title="Duration"/>
+        <long name="duration" title="Duration"/>
 
         <integer name="status" title="Status"/>
 
@@ -25,6 +25,8 @@
         <boolean name="hasEnded" title="Has Ended"/>
         <boolean name="hasPostponed" title="Has Postponed"/>
         <boolean name="hasCanceled" title="Has Canceled"/>
+
+        <boolean name="isSave"/>
 
 
 

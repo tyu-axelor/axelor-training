@@ -10,10 +10,19 @@
         <field name="hasPostponed" hidden="true"/>
         <field name="hasCanceled" hidden="true"/>
 
-        <!--        <button name="start" title="Start" onClick=""/>-->
-        <!--        <button name="end" title="End" onClick=""/>-->
-        <!--        <button name="postpone" title="Postpone" onClick=""/>-->
-        <!--        <button name="cancel" title="Cancel" onClick=""/>-->
+        <button name="start" onClick="action-event-method-start-event,save" help="Start" icon="fa-solid fa-play"
+                hideIf="hasStarted == true &amp;&amp; hasPostponed == false || hasCanceled == true || isSave == false"
+        readonly="true"/>
+        <button name="end" onClick="action-event-method-end-event,save" help="End" icon="fa-solid fa-check"
+                hideIf="hasStarted == false || hasEnded == true || hasCanceled == true || isSave == false"
+                readonly="true"/>
+        <button name="postpone" onClick="action-event-method-postpone-event,save" help="Postpone"
+                icon="fa-solid fa-pause"
+                hideIf="hasStarted == false || hasEnded == true || hasPostponed == true || hasCanceled == true || isSave == false"
+                readonly="true"/>
+        <button name="cancelBut" onClick="action-event-method-cancel-event,save" help="Cancel" icon="fa-solid fa-ban"
+                hideIf="(hasStarted == false &amp;&amp; hasPostponed == false) || hasEnded == true || hasCanceled == true || isSave == false"
+                readonly="true"/>
 
         <field name="subject"/>
         <field name="startDate"/>
@@ -24,28 +33,69 @@
 
     </grid>
 
-    <form title="Events" name="events-event-form" model="com.axelor.apps.events.db.Event">
+    <form title="Events" name="events-event-form" model="com.axelor.apps.events.db.Event" onNew="action-event-method-set-default-value">
         <toolbar>
-            <button name="start" onClick="" help="Start" icon="fa-solid fa-play"/>
-            <button name="end" onClick="" help="End" icon="fa-solid fa-check"/>
-            <button name="postpone" onClick="" help="Postpone" icon="fa-solid fa-pause"/>
-            <button name="cancelBut" onClick="" help="Cancel" icon="fa-solid fa-ban"/>
-<!--            <button name="cancel" onClick="" help="Cancel" icon="fa-solid fa-slash"/>-->
+            <button name="start" onClick="action-event-method-start-event,save" help="Start" icon="fa-solid fa-play"
+                    readonlyIf="hasStarted == true &amp;&amp; hasPostponed == false || hasCanceled == true || isSave == false"/>
+            <button name="end" onClick="save,action-event-method-end-event" help="End" icon="fa-solid fa-check"
+                    readonlyIf="hasStarted == false || hasEnded == true || hasCanceled == true || isSave == false"/>
+            <button name="postpone" onClick="action-event-method-postpone-event,save" help="Postpone"
+                    icon="fa-solid fa-pause"
+                    readonlyIf="hasStarted == false || hasEnded == true || hasPostponed == true || hasCanceled == true || isSave == false"/>
+            <button name="cancelBut" onClick="action-event-method-cancel-event,save" help="Cancel"
+                    icon="fa-solid fa-ban"
+                    readonlyIf="(hasStarted == false &amp;&amp; hasPostponed == false) || hasEnded == true || hasCanceled == true || isSave == false"/>
         </toolbar>
 
+        <!--        <menubar>-->
+        <!--            <menu name="eventToolsMenu" title="Event Status Tools" icon="fa-wrench" showTitle="true">-->
+        <!--                <item name="startEvent" title="Start Event" action="action-event-method-start-event"/>-->
+        <!--                <item name="endEvent" title="End Event" action="action-event-method-end-event"/>-->
+        <!--                <item name="postponeEvent" title="Postpone Event" action="action-event-method-postpone-event"/>-->
+        <!--                <item name="cancelEvent" title="Cancel Event" action="action-event-method-cancel-event"/>-->
+        <!--            </menu>-->
+        <!--        </menubar>-->
+
         <panel name="eventsMainPanel" title="Main Panel" showTitle="false">
-            <field name="subject" title="Subject"/>
+            <field name="subject" title="Subject" required="true"/>
             <field name="content" title="Content" widget="html"/>
+
+            <field name="hasStarted" title="Has Started" hidden="true"/>
+            <field name="hasEnded" title="Has Ended" hidden="true"/>
+            <field name="hasPostponed" title="Has Postponed" hidden="true"/>
+            <field name="hasCanceled" title="Has Canceled" hidden="true"/>
+            <field name="isSave" hidden="true"/>
         </panel>
-        <panel name="eventsSidePanel" title="Side Panel" showTitle="false">
+        <panel name="eventsSidePanel" title="Side Panel" showTitle="false" sidebar="true">
             <field name="startDate"/>
-            <field name="endDate"/>
+            <field name="endDate" validIf="endDate == null || endDate &gt;= startDate"/>
             <field name="duration" widget="duration"/>
             <field name="status" widget="NavSelect" selection="events.event.status.select"/>
-            <field name="eventUser" title="Assigned to" grid-view="user-grid" form-view="user-form"/>
-            <field name="deadlineDate"/>
+            <field name="eventUser" title="Assigned to" grid-view="user-grid" form-view="user-form" required="true"/>
+            <field name="deadlineDate" validIf="deadlineDate &gt;= startDate || deadlineDate == null"/>
             <field name="associatedToSelect" selection="events.event.related.to.select" widget="RefSelect"/>
         </panel>
     </form>
+
+    <action-method name="action-event-method-set-default-value">
+        <call class="com.axelor.apps.events.web.EventController" method="setDefaultValue"/>
+    </action-method>
+
+    <action-method name="action-event-method-start-event">
+        <call class="com.axelor.apps.events.web.EventController" method="startEvent"/>
+    </action-method>
+
+    <action-method name="action-event-method-end-event">
+        <call class="com.axelor.apps.events.web.EventController" method="endEvent"/>
+    </action-method>
+
+    <action-method name="action-event-method-postpone-event">
+        <call class="com.axelor.apps.events.web.EventController" method="postponeEvent"/>
+    </action-method>
+
+    <action-method name="action-event-method-cancel-event">
+        <call class="com.axelor.apps.events.web.EventController" method="cancelEvent"/>
+    </action-method>
+
 
 </object-views>
