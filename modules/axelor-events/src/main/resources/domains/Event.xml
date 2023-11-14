@@ -7,16 +7,24 @@
 
     <entity name="Event">
         <string name="subject" title="Subject"/>
-        <string name="content" title="Subject" large="true"/>
+        <string name="content" title="Content" large="true"/>
 
-        <time name="startDate" title="Start Date"/>
-        <time name="endDate" title="End Date"/>
-        <long name="duration" title="Duration"/>
+        <datetime name="startDate" title="Start Date"/>
+        <datetime name="endDate" title="End Date"/>
+        <integer name="duration" title="Duration"/>
 
         <integer name="status" title="Status"/>
 
-        <many-to-one name="user" ref="com.axelor.apps.events.db.User"/>
-        <time name="deadlineDate" title="Deadline Date"/>
+        <many-to-one name="eventUser" title="Assigned to" ref="com.axelor.auth.db.User"/>
+        <datetime name="deadlineDate" title="Deadline Date"/>
+
+        <string name="associatedToSelect" title="Associated to" selection="events.event.associated.to.select"/>
+        <long name="associatedToSelectId"/>
+
+        <boolean name="hasStarted" title="Has Started"/>
+        <boolean name="hasEnded" title="Has Ended"/>
+        <boolean name="hasPostponed" title="Has Postponed"/>
+        <boolean name="hasCanceled" title="Has Canceled"/>
 
 
 

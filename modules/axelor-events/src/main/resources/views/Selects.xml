@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_6.1.xsd">
+
+
+
+    <selection name="events.event.status.select">
+        <option value="0">Not Started</option>
+        <option value="1">In Progress</option>
+        <option value="2">Completed</option>
+        <option value="3">Canceled</option>
+    </selection>
+
+    <selection name="events.event.related.to.select">
+        <option value="com.axelor.apps.contact.db.Contact">Contact</option>
+        <option value="com.axelor.apps.sales.db.Product">Product</option>
+    </selection>
+
+</object-views>

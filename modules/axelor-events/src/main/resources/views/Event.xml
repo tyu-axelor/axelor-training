@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_6.1.xsd">
+
+
+    <grid title="Events" name="events-event-grid" model="com.axelor.apps.events.db.Event">
+        <field name="hasStarted" hidden="true"/>
+        <field name="hasEnded" hidden="true"/>
+        <field name="hasPostponed" hidden="true"/>
+        <field name="hasCanceled" hidden="true"/>
+
+        <!--        <button name="start" title="Start" onClick=""/>-->
+        <!--        <button name="end" title="End" onClick=""/>-->
+        <!--        <button name="postpone" title="Postpone" onClick=""/>-->
+        <!--        <button name="cancel" title="Cancel" onClick=""/>-->
+
+        <field name="subject"/>
+        <field name="startDate"/>
+        <field name="endDate"/>
+        <field name="duration" widget="duration"/>
+        <field name="status" widget="NavSelect" selection="events.event.status.select"/>
+        <field name="eventUser"/>
+
+    </grid>
+
+    <form title="Events" name="events-event-form" model="com.axelor.apps.events.db.Event">
+        <toolbar>
+            <button name="start" onClick="" help="Start" icon="fa-solid fa-play"/>
+            <button name="end" onClick="" help="End" icon="fa-solid fa-check"/>
+            <button name="postpone" onClick="" help="Postpone" icon="fa-solid fa-pause"/>
+            <button name="cancelBut" onClick="" help="Cancel" icon="fa-solid fa-ban"/>
+<!--            <button name="cancel" onClick="" help="Cancel" icon="fa-solid fa-slash"/>-->
+        </toolbar>
+
+        <panel name="eventsMainPanel" title="Main Panel" showTitle="false">
+            <field name="subject" title="Subject"/>
+            <field name="content" title="Content" widget="html"/>
+        </panel>
+        <panel name="eventsSidePanel" title="Side Panel" showTitle="false">
+            <field name="startDate"/>
+            <field name="endDate"/>
+            <field name="duration" widget="duration"/>
+            <field name="status" widget="NavSelect" selection="events.event.status.select"/>
+            <field name="eventUser" title="Assigned to" grid-view="user-grid" form-view="user-form"/>
+            <field name="deadlineDate"/>
+            <field name="associatedToSelect" selection="events.event.related.to.select" widget="RefSelect"/>
+        </panel>
+    </form>
+
+</object-views>

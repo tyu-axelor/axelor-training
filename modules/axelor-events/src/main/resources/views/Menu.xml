@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <menuitem name="events-root"
+              title="Event" />
+
+    <menuitem name="events-root-event"
+              parent="events-root"
+              title="Events"
+              action="events.root.event"/>
+
+    <action-view name="events.root.event"
+                 title="Events"
+                 model="com.axelor.apps.events.db.Event">
+        <view type="grid" name="events-event-grid"/>
+        <view type="form" name="events-event-form"/>
+    </action-view>
+
+</object-views>
