@@ -11,11 +11,38 @@
               title="Events"
               action="events.root.event"/>
 
+    <menuitem name="events-root-event-calendar" title="Event Calendar" parent="events-root" action="events.root.event.calendar"/>
+
+    <menuitem name="events-root-today-event" title="Today's Events" parent="events-root" action="events.root.today.event"/>
+
+    <action-view name="events.root.today.event" title="Today's Events" model="com.axelor.apps.events.db.Event">
+        <view type="grid" name="events-today-event-grid"/>
+        <view type="form" name="events-event-form"/>
+
+<!--        <domain><![CDATA[-->
+<!--        DATE_TRUNC('day',self.startDate) <= :_todayDateTime AND (self.endDate = null or DATE_TRUNC('day',(self.endDate + INTERVAL '1 day')) >= :_todayDateTime)-->
+<!--        ]]>-->
+
+<!--        </domain>-->
+
+        <domain><![CDATA[
+            DATE(self.startDate) <= CURRENT_DATE AND ( DATE(self.endDate) >= CURRENT_DATE OR self.endDate IS NULL)
+        ]]>
+
+        </domain>
+<!--        <context name="_todayDateTime" expr="eval:__datetime__"/>-->
+    </action-view>
+
     <action-view name="events.root.event"
                  title="Events"
                  model="com.axelor.apps.events.db.Event">
         <view type="grid" name="events-event-grid"/>
         <view type="form" name="events-event-form"/>
+        <view type="calendar" name="event-calendar-color-by-status"/>
+    </action-view>
+
+    <action-view name="events.root.event.calendar" title="Events Calendar" model="com.axelor.apps.events.db.Event">
+        <view type="calendar" name="event-calendar-color-by-status"/>
     </action-view>
 
 </object-views>

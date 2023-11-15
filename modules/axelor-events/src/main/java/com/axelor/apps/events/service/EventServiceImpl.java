@@ -34,6 +34,8 @@ public class EventServiceImpl implements EventService {
         Duration duration = Duration.between(startDate, endDate);
         long seconds = duration.getSeconds();
         eventObject.setDuration(seconds);
+        eventObject.setStatus(2);
+        eventObject.setHasEnded(true);
         eventRepository.save(eventObject);
         return seconds;
 

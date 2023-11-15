@@ -6,6 +6,8 @@ import com.axelor.inject.Beans;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 
+import java.time.LocalDateTime;
+
 public class EventController {
 
     public void setDefaultValue(ActionRequest request, ActionResponse response) {
@@ -48,6 +50,17 @@ public class EventController {
         response.setValue("status", 3);
         response.setValue("endDate", null);
 
+    }
+
+    public void startDateOnChange(ActionRequest request, ActionResponse response) {
+        Event event = request.getContext().asType(Event.class);
+        LocalDateTime startDate = event.getStartDate();
+        if(startDate != null){
+            response.setValue("status",1);
+            response.setValue("hasStarted",true);
+        }else{
+            response.setValue("status",0);
+        }
     }
 
 

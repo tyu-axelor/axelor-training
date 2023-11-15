@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/db/repo/EventEventRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/module/EventModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/web/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Event.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/web/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/web/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Event.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +82,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/teng/Documents/repo/open-suite-webapp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/teng/Documents/Projects/axelor-training&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -266,6 +263,8 @@
       <workItem from="1699538715056" duration="25837000" />
       <workItem from="1699624518368" duration="16393000" />
       <workItem from="1699968842308" duration="26982000" />
+      <workItem from="1700000925394" duration="48000" />
+      <workItem from="1700055461336" duration="8860000" />
     </task>
     <servers />
   </component>
