@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/web/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/web/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Event.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
@@ -264,7 +262,8 @@
       <workItem from="1699624518368" duration="16393000" />
       <workItem from="1699968842308" duration="26982000" />
       <workItem from="1700000925394" duration="48000" />
-      <workItem from="1700055461336" duration="8860000" />
+      <workItem from="1700055461336" duration="18447000" />
+      <workItem from="1700083804067" duration="1345000" />
     </task>
     <servers />
   </component>

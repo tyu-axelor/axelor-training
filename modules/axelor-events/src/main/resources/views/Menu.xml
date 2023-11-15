@@ -4,33 +4,52 @@
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
     <menuitem name="events-root"
-              title="Event" />
+              title="Event"/>
 
     <menuitem name="events-root-event"
               parent="events-root"
               title="Events"
               action="events.root.event"/>
 
-    <menuitem name="events-root-event-calendar" title="Event Calendar" parent="events-root" action="events.root.event.calendar"/>
+    <menuitem name="events-root-event-calendar" title="Event Calendar" parent="events-root"
+              action="events.root.event.calendar"/>
 
-    <menuitem name="events-root-today-event" title="Today's Events" parent="events-root" action="events.root.today.event"/>
+    <menuitem name="events-root-today-event" title="Today's Events" parent="events-root"
+              action="events.root.today.event"/>
+
+    <menuitem name="events-my-event-of-the-day" title="My Events of the Day" parent="events-root"
+              action="events.my.event.of.the.day"/>
+
+    <action-view name="events.my.event.of.the.day" title="My Events of the Day" model="com.axelor.apps.events.db.Event">
+        <view type="grid" name="events-my-event-of-the-day-grid"/>
+        <view type="form" name="events-event-form"/>
+        <domain><![CDATA[
+            DATE(self.startDate) <= CURRENT_DATE
+            AND ( DATE(self.endDate) >= CURRENT_DATE OR self.endDate IS NULL)
+            AND self.eventUser.id = :_userId
+        ]]>
+
+        </domain>
+        <context name="_userId" expr="eval:__user__.id"/>
+
+    </action-view>
 
     <action-view name="events.root.today.event" title="Today's Events" model="com.axelor.apps.events.db.Event">
         <view type="grid" name="events-today-event-grid"/>
         <view type="form" name="events-event-form"/>
 
-<!--        <domain><![CDATA[-->
-<!--        DATE_TRUNC('day',self.startDate) <= :_todayDateTime AND (self.endDate = null or DATE_TRUNC('day',(self.endDate + INTERVAL '1 day')) >= :_todayDateTime)-->
-<!--        ]]>-->
+        <!--        <domain><![CDATA[-->
+        <!--        DATE_TRUNC('day',self.startDate) <= :_todayDateTime AND (self.endDate = null or DATE_TRUNC('day',(self.endDate + INTERVAL '1 day')) >= :_todayDateTime)-->
+        <!--        ]]>-->
 
-<!--        </domain>-->
+        <!--        </domain>-->
 
         <domain><![CDATA[
             DATE(self.startDate) <= CURRENT_DATE AND ( DATE(self.endDate) >= CURRENT_DATE OR self.endDate IS NULL)
         ]]>
 
         </domain>
-<!--        <context name="_todayDateTime" expr="eval:__datetime__"/>-->
+        <!--        <context name="_todayDateTime" expr="eval:__datetime__"/>-->
     </action-view>
 
     <action-view name="events.root.event"
