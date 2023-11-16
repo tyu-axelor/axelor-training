@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <dashboard title="My DashBoard" name="dashboard.events.my.dashboard">
+        <dashlet action="dashlet.events.my.events.of.the.day" height="350" colSpan="12"/>
+        <dashlet action="dashlet.events.my.calendar" height="350" colSpan="12"/>
+    </dashboard>
+
+    <action-view name="dashlet.events.my.events.of.the.day" title="My Events of the Day" model="com.axelor.apps.events.db.Event">
+        <view type="grid" name="events-my-event-of-the-day-grid"/>
+        <view type="form" name="events-event-form"/>
+        <domain><![CDATA[
+            DATE(self.startDate) <= CURRENT_DATE
+            AND ( DATE(self.endDate) >= CURRENT_DATE OR self.endDate IS NULL)
+            AND self.eventUser.id = :_userId
+        ]]>
+
+        </domain>
+        <context name="_userId" expr="eval:__user__.id"/>
+    </action-view>
+
+    <action-view name="dashlet.events.my.calendar" title="My Calendar" model="com.axelor.apps.events.db.Event">
+        <view type="calendar" name="event-calendar-color-by-status"/>
+        <domain>
+            self.eventUser.id = :_userId
+        </domain>
+        <context name="_userId" expr="eval:__user__.id"/>
+
+    </action-view>
+
+</object-views>

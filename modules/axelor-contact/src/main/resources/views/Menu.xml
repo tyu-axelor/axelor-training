@@ -4,7 +4,7 @@
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 <!--    menuItems for Contact-->
     <menuitem name="menu-contact-root"
-              title="Contact" />
+              title="Contact" icon="fa-user"/>
 
     <menuitem name="menu-contact-friends"
               parent="menu-contact-root"

@@ -4,7 +4,7 @@
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
     <menuitem name="events-root"
-              title="Event"/>
+              title="Event" icon="fa-calendar" icon-background="#34d0f7"/>
 
     <menuitem name="events-root-event"
               parent="events-root"
@@ -20,6 +20,13 @@
     <menuitem name="events-my-event-of-the-day" title="My Events of the Day" parent="events-root"
               action="events.my.event.of.the.day"/>
 
+    <menuitem name="dashboard-events-my-dashboard" title="My Dashboard" parent="events-root"
+              action="events.dashboard.my.dashboard"/>
+
+    <action-view name="events.dashboard.my.dashboard" title="My Dashboard" model="com.axelor.apps.events.db.Event">
+        <view type="dashboard" name="dashboard.events.my.dashboard"/>
+    </action-view>
+
     <action-view name="events.my.event.of.the.day" title="My Events of the Day" model="com.axelor.apps.events.db.Event">
         <view type="grid" name="events-my-event-of-the-day-grid"/>
         <view type="form" name="events-event-form"/>
@@ -33,6 +40,8 @@
         <context name="_userId" expr="eval:__user__.id"/>
 
     </action-view>
+
+
 
     <action-view name="events.root.today.event" title="Today's Events" model="com.axelor.apps.events.db.Event">
         <view type="grid" name="events-today-event-grid"/>

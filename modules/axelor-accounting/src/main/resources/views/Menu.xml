@@ -4,7 +4,7 @@
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
     <menuitem name="accounting-root"
-              title="Accounting"/>
+              title="Accounting" icon="fa-calculator" icon-background="#2fa042"/>
 
     <menuitem name="accounting-root-account"
               parent="accounting-root"
@@ -21,7 +21,7 @@
               action="accounting.sales.productfamily"/>
 
     <menuitem name="dashboard-root"
-              title="Dashboard"/>
+              title="Dashboard" icon="fa-address-card-o" icon-background="#84429f"/>
 
     <menuitem name="dashboard-root-monitoring-dashboard"
               parent="dashboard-root"

@@ -24,7 +24,7 @@
     </action-view>
 
     <action-view name="dashlet.orders.tobeinvoiced" title="Orders to be invoiced" model="com.axelor.apps.sales.db.Order">
-        <view type="grid" name="accounting-sales-orders-dashlet-grid"/>
+        <view type="grid" name="events-my-event-of-the-day-grid"/>
         <view type="form" name="sales-orders-form"/>
         <domain>
             self.invoice = null

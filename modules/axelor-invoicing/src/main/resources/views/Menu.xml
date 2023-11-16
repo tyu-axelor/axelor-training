@@ -4,7 +4,7 @@
               xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
 
     <menuitem name="invoicing-root-invoice"
-              title="Invoice" />
+              title="Invoice" icon="fa-file-text-o" icon-background="#31b4a9"/>
 
     <menuitem name="invoicing-root-invoice-invoices"
               parent="invoicing-root-invoice"
