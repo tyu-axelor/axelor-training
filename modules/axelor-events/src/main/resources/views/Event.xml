@@ -5,24 +5,17 @@
 
 
     <grid title="Events" name="events-event-grid" model="com.axelor.apps.events.db.Event">
-        <field name="hasStarted" hidden="true"/>
-        <field name="hasEnded" hidden="true"/>
-        <field name="hasPostponed" hidden="true"/>
-        <field name="hasCanceled" hidden="true"/>
 
-        <button name="start" onClick="action-event-method-start-event,save" help="Start" icon="fa-solid fa-play"
-                hideIf="hasStarted == true &amp;&amp; hasPostponed == false || hasCanceled == true || isSave == false"
-                readonly="true"/>
-        <button name="end" onClick="action-event-method-end-event,save" help="End" icon="fa-solid fa-check"
-                hideIf="hasStarted == false || hasEnded == true || hasCanceled == true || isSave == false"
-                readonly="true"/>
+        <button name="start" onClick="save,action-event-method-start-event,save" help="Start" icon="fa-solid fa-play"
+                readonlyIf="status == 1 || status == 2 || status == 3"/>
+        <button name="end" onClick="save,action-event-method-end-event" help="End" icon="fa-solid fa-check"
+                readonlyIf="status == 0 || status == 2 || status == 3 || status == 4"/>
         <button name="postpone" onClick="action-event-method-postpone-event,save" help="Postpone"
                 icon="fa-solid fa-pause"
-                hideIf="hasStarted == false || hasEnded == true || hasPostponed == true || hasCanceled == true || isSave == false"
-                readonly="true"/>
-        <button name="cancelBut" onClick="action-event-method-cancel-event,save" help="Cancel" icon="fa-solid fa-ban"
-                hideIf="(hasStarted == false &amp;&amp; hasPostponed == false) || hasEnded == true || hasCanceled == true || isSave == false"
-                readonly="true"/>
+                readonlyIf="status == 0 || status == 2 || status == 3 || status == 4"/>
+        <button name="cancelBut" onClick="action-event-method-cancel-event,save" help="Cancel"
+                icon="fa-solid fa-ban"
+                readonlyIf="status == 0 || status == 2 || status == 3"/>
 
         <field name="subject"/>
         <field name="startDate"/>
@@ -37,23 +30,17 @@
 <!--        <hilite if="status == 1 &amp;&amp; deadlineDate != null &amp;&amp; deadlineDate &lt;= 'eval:__datetime__'" background="red"/>-->
         <hilite if="status == 1 &amp;&amp; $moment(deadlineDate).diff(todayDateTime) &lt; 0"  background="red"/>
         <hilite if="status == 2" background="green"/>
-        <field name="hasStarted" hidden="true"/>
-        <field name="hasEnded" hidden="true"/>
-        <field name="hasPostponed" hidden="true"/>
-        <field name="hasCanceled" hidden="true"/>
-        <button name="start" onClick="action-event-method-start-event,save" help="Start" icon="fa-solid fa-play"
-                hideIf="hasStarted == true &amp;&amp; hasPostponed == false || hasCanceled == true || isSave == false"
-                readonly="true"/>
-        <button name="end" onClick="action-event-method-end-event,save" help="End" icon="fa-solid fa-check"
-                hideIf="hasStarted == false || hasEnded == true || hasCanceled == true || isSave == false"
-                readonly="true"/>
+
+        <button name="start" onClick="save,action-event-method-start-event,save" help="Start" icon="fa-solid fa-play"
+                readonlyIf="status == 1 || status == 2 || status == 3"/>
+        <button name="end" onClick="save,action-event-method-end-event" help="End" icon="fa-solid fa-check"
+                readonlyIf="status == 0 || status == 2 || status == 3 || status == 4"/>
         <button name="postpone" onClick="action-event-method-postpone-event,save" help="Postpone"
                 icon="fa-solid fa-pause"
-                hideIf="hasStarted == false || hasEnded == true || hasPostponed == true || hasCanceled == true || isSave == false"
-                readonly="true"/>
-        <button name="cancelBut" onClick="action-event-method-cancel-event,save" help="Cancel" icon="fa-solid fa-ban"
-                hideIf="(hasStarted == false &amp;&amp; hasPostponed == false) || hasEnded == true || hasCanceled == true || isSave == false"
-                readonly="true"/>
+                readonlyIf="status == 0 || status == 2 || status == 3 || status == 4"/>
+        <button name="cancelBut" onClick="action-event-method-cancel-event,save" help="Cancel"
+                icon="fa-solid fa-ban"
+                readonlyIf="status == 0 || status == 2 || status == 3"/>
 
         <field name="subject"/>
         <field name="startDate"/>
@@ -68,24 +55,17 @@
         <!--        <hilite if="status == 1 &amp;&amp; deadlineDate != null &amp;&amp; deadlineDate &lt;= 'eval:__datetime__'" background="red"/>-->
         <hilite if="status == 1 &amp;&amp; $moment(deadlineDate).diff(todayDateTime) &lt; 0"  background="red"/>
         <hilite if="status == 2" background="green"/>
-        <field name="hasStarted" hidden="true"/>
-        <field name="hasEnded" hidden="true"/>
-        <field name="hasPostponed" hidden="true"/>
-        <field name="hasCanceled" hidden="true"/>
         <field name="eventUser" hidden="true"/>
-        <button name="start" onClick="action-event-method-start-event,save" help="Start" icon="fa-solid fa-play"
-                hideIf="hasStarted == true &amp;&amp; hasPostponed == false || hasCanceled == true || isSave == false"
-                readonly="true"/>
-        <button name="end" onClick="action-event-method-end-event,save" help="End" icon="fa-solid fa-check"
-                hideIf="hasStarted == false || hasEnded == true || hasCanceled == true || isSave == false"
-                readonly="true"/>
+        <button name="start" onClick="save,action-event-method-start-event,save" help="Start" icon="fa-solid fa-play"
+                readonlyIf="status == 1 || status == 2 || status == 3"/>
+        <button name="end" onClick="save,action-event-method-end-event" help="End" icon="fa-solid fa-check"
+                readonlyIf="status == 0 || status == 2 || status == 3 || status == 4"/>
         <button name="postpone" onClick="action-event-method-postpone-event,save" help="Postpone"
                 icon="fa-solid fa-pause"
-                hideIf="hasStarted == false || hasEnded == true || hasPostponed == true || hasCanceled == true || isSave == false"
-                readonly="true"/>
-        <button name="cancelBut" onClick="action-event-method-cancel-event,save" help="Cancel" icon="fa-solid fa-ban"
-                hideIf="(hasStarted == false &amp;&amp; hasPostponed == false) || hasEnded == true || hasCanceled == true || isSave == false"
-                readonly="true"/>
+                readonlyIf="status == 0 || status == 2 || status == 3 || status == 4"/>
+        <button name="cancelBut" onClick="action-event-method-cancel-event,save" help="Cancel"
+                icon="fa-solid fa-ban"
+                readonlyIf="status == 0 || status == 2 || status == 3"/>
 
         <field name="subject"/>
         <field name="startDate"/>
@@ -99,16 +79,16 @@
     <form title="Events" name="events-event-form" model="com.axelor.apps.events.db.Event"
           onNew="action-event-method-set-default-value">
         <toolbar>
-            <button name="start" onClick="action-event-method-start-event,save" help="Start" icon="fa-solid fa-play"
-                    readonlyIf="hasStarted == true &amp;&amp; hasPostponed == false || hasCanceled == true || isSave == false"/>
+            <button name="start" onClick="save,action-event-method-start-event,save" help="Start" icon="fa-solid fa-play"
+                    readonlyIf="status == 1 || status == 2 || status == 3"/>
             <button name="end" onClick="save,action-event-method-end-event" help="End" icon="fa-solid fa-check"
-                    readonlyIf="hasStarted == false || hasEnded == true || hasCanceled == true || isSave == false"/>
+                    readonlyIf="status == 0 || status == 2 || status == 3 || status == 4"/>
             <button name="postpone" onClick="action-event-method-postpone-event,save" help="Postpone"
                     icon="fa-solid fa-pause"
-                    readonlyIf="hasStarted == false || hasEnded == true || hasPostponed == true || hasCanceled == true || isSave == false"/>
+                    readonlyIf="status == 0 || status == 2 || status == 3 || status == 4"/>
             <button name="cancelBut" onClick="action-event-method-cancel-event,save" help="Cancel"
                     icon="fa-solid fa-ban"
-                    readonlyIf="(hasStarted == false &amp;&amp; hasPostponed == false) || hasEnded == true || hasCanceled == true || isSave == false"/>
+                    readonlyIf="status == 0 || status == 2 || status == 3"/>
         </toolbar>
 
         <!--        <menubar>-->
@@ -123,18 +103,12 @@
         <panel name="eventsMainPanel" title="Main Panel" showTitle="false">
             <field name="subject" title="Subject" required="true"/>
             <field name="content" title="Content" widget="html"/>
-
-            <field name="hasStarted" title="Has Started" hidden="true"/>
-            <field name="hasEnded" title="Has Ended" hidden="true"/>
-            <field name="hasPostponed" title="Has Postponed" hidden="true"/>
-            <field name="hasCanceled" title="Has Canceled" hidden="true"/>
-            <field name="isSave" hidden="true"/>
         </panel>
         <panel name="eventsSidePanel" title="Side Panel" showTitle="false" sidebar="true">
             <field name="startDate" onChange="action-event-method-change-start-date-on-change"/>
-            <field name="endDate" validIf="endDate == null || endDate &gt;= startDate"/>
-            <field name="duration" widget="duration"/>
-            <field name="status" widget="NavSelect" selection="events.event.status.select"/>
+            <field name="endDate" onChange="action-event-method-change-end-date-on-change" readonlyIf="startDate == null" validIf="endDate == null || endDate &gt;= startDate"/>
+            <field name="duration" widget="duration" readonly="true"/>
+            <field name="status" widget="NavSelect" selection="events.event.status.select" readonly="true"/>
             <field name="eventUser" title="Assigned to" grid-view="user-grid" form-view="user-form" required="true"/>
             <field name="deadlineDate" required="true"/>
             <field name="associatedToSelect" selection="events.event.related.to.select" widget="RefSelect"/>
@@ -168,6 +142,10 @@
 
     <action-method name="action-event-method-change-start-date-on-change">
         <call class="com.axelor.apps.events.web.EventController" method="startDateOnChange"/>
+    </action-method>
+
+    <action-method name="action-event-method-change-end-date-on-change">
+        <call class="com.axelor.apps.events.web.EventController" method="endDateOnChange"/>
     </action-method>
 
 

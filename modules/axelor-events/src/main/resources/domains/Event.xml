@@ -21,15 +21,6 @@
         <string name="associatedToSelect" title="Associated to" selection="events.event.associated.to.select"/>
         <long name="associatedToSelectId"/>
 
-        <boolean name="hasStarted" title="Has Started"/>
-        <boolean name="hasEnded" title="Has Ended"/>
-        <boolean name="hasPostponed" title="Has Postponed"/>
-        <boolean name="hasCanceled" title="Has Canceled"/>
-
-        <boolean name="isSave"/>
-
-
-
     </entity>
 
 
