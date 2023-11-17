@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views https://axelor.com/xml/ns/object-views/object-views_6.0.xsd">
+
+    <form title="Products" name="sales-product-form"
+          id="events-sales-product-form" model="com.axelor.apps.sales.db.Product" extension="true">
+        <extend target="//panel[@name='overviewPanel']">
+            <insert position="after">
+                <panel title="Events" name="eventPanel" colSpan="12">
+                    <field name="eventList" title="Event" grid-view="events-event-grid" form-view="events-event-form" colSpan="12"/>
+                </panel>
+            </insert>
+        </extend>
+    </form>
+
+</object-views>

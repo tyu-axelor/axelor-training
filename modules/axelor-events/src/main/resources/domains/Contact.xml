@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models https://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
+
+    <module name="contact" package="com.axelor.apps.contact.db"/>
+
+    <entity name="Contact">
+        <one-to-many name="eventList" title="Event" ref="com.axelor.apps.events.db.Event" mappedBy="contact"/>
+    </entity>
+
+</domain-models>

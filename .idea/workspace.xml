@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Contact.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Product.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Contact.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Product.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/db/repo/EventEventRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/module/EventModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/module/EventModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/web/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/web/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Event.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Event.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Selects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Selects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,28 +78,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "/home/teng/Documents/Projects/axelor-training",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/teng/Documents/Projects/axelor-training/modules/axelor-events/src/main/java/com/axelor/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/teng/Documents/Projects/axelor-training&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/teng/Documents/Projects/axelor-training/modules/axelor-events/src/main/java/com/axelor/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/modules/axelor-sales/src/main/resources/i18n" />
@@ -272,7 +272,8 @@
       <workItem from="1700083804067" duration="1345000" />
       <workItem from="1700087021839" duration="57000" />
       <workItem from="1700142589294" duration="6275000" />
-      <workItem from="1700170462052" duration="3401000" />
+      <workItem from="1700170462052" duration="3504000" />
+      <workItem from="1700227401323" duration="6350000" />
     </task>
     <servers />
   </component>
