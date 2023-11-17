@@ -24,10 +24,11 @@
 
         <extend target="//panel[@name='overviewPanel']/field[@name='unitPrice']">
             <insert position="after">
-                <field name="account" title="Account"/>
+                <field name="account" title="Account" colSpan="6"/>
             </insert>
             <insert position="after">
-                <field name="productFamily" title="Product Family" form-view="accounting-productfamily-form" grid-view="accounting-productfamily-grid"/>
+                <field name="productFamily" title="Product Family" form-view="accounting-productfamily-form"
+                       grid-view="accounting-productfamily-grid" colSpan="4"/>
             </insert>
         </extend>
 

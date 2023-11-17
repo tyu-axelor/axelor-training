@@ -7,11 +7,25 @@
           id="events-sales-product-form" model="com.axelor.apps.sales.db.Product" extension="true">
         <extend target="//panel[@name='overviewPanel']">
             <insert position="after">
-                <panel title="Events" name="eventPanel" colSpan="12">
-                    <field name="eventList" title="Event" grid-view="events-event-grid" form-view="events-event-form" colSpan="12"/>
+                <panel title="Events" showTitle="false" name="eventPanel" colSpan="12">
+                    <panel-dashlet action="dashlet.events.show.in.product" name="eventDashlet" colSpan="12"/>
                 </panel>
             </insert>
         </extend>
     </form>
 
+    <action-view name="dashlet.events.show.in.product" title="Events" model="com.axelor.apps.events.db.Event">
+        <view type="grid" name="events-event-grid"/>
+        <view type="form" name="events-event-form"/>
+        <domain><![CDATA[
+            self.associatedToSelect = :type
+            AND self.associatedToSelectId = :id
+            AND self.eventUser.id = :_userId
+        ]]>
+
+        </domain>
+        <context name="_userId" expr="eval:__user__.id"/>
+        <context name="type" expr="com.axelor.apps.sales.db.Product"/>
+        <context name="id" expr="eval:id"/>
+    </action-view>
 </object-views>

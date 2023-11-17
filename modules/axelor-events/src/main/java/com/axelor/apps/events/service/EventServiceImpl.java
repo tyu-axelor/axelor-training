@@ -17,14 +17,10 @@ import java.time.LocalDateTime;
 public class EventServiceImpl implements EventService {
 
     protected EventRepository eventRepository;
-    protected ContactRepository contactRepository;
-    protected ProductRepository productRepository;
 
     @Inject
-    public EventServiceImpl(EventRepository eventRepository, ContactRepository contactRepository, ProductRepository productRepository) {
+    public EventServiceImpl(EventRepository eventRepository) {
         this.eventRepository = eventRepository;
-        this.contactRepository = contactRepository;
-        this.productRepository = productRepository;
     }
 
     @Transactional
@@ -72,26 +68,26 @@ public class EventServiceImpl implements EventService {
         eventObject.setEndDate(null);
     }
 
-    @Transactional
-    @Override
-    public void setAssociatedTo(Event event) {
-        Event eventObject = Beans.get(EventRepository.class).find(event.getId());
-        String type = eventObject.getAssociatedToSelect();
-        Long objectId = eventObject.getAssociatedToSelectId();
-        if("com.axelor.apps.sales.db.Product".equals(type)){
-            Product product = Beans.get(ProductRepository.class).find(objectId);
-            product.addEventListItem(eventObject);
-            eventObject.setProduct(product);
-            productRepository.save(product);
-            eventRepository.save(eventObject);
-        }
-        else{
-            Contact contact = Beans.get(ContactRepository.class).find(objectId);
-            contact.addEventListItem(eventObject);
-            eventObject.setContact(contact);
-            contactRepository.save(contact);
-            eventRepository.save(eventObject);
-        }
-
-    }
+//    @Transactional
+//    @Override
+//    public void setAssociatedTo(Event event) {
+//        Event eventObject = Beans.get(EventRepository.class).find(event.getId());
+//        String type = eventObject.getAssociatedToSelect();
+//        Long objectId = eventObject.getAssociatedToSelectId();
+//        if("com.axelor.apps.sales.db.Product".equals(type)){
+//            Product product = Beans.get(ProductRepository.class).find(objectId);
+//            product.addEventListItem(eventObject);
+//            eventObject.setProduct(product);
+//            productRepository.save(product);
+//            eventRepository.save(eventObject);
+//        }
+//        else{
+//            Contact contact = Beans.get(ContactRepository.class).find(objectId);
+//            contact.addEventListItem(eventObject);
+//            eventObject.setContact(contact);
+//            contactRepository.save(contact);
+//            eventRepository.save(eventObject);
+//        }
+//
+//    }
 }

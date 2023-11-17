@@ -9,6 +9,6 @@ public interface EventService {
     public void postponeEvent(Event event);
     public void cancelEvent(Event event);
 
-    public void setAssociatedTo(Event event);
+//    public void setAssociatedTo(Event event);
 
 }

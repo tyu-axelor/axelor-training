@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd82042-18a5-41ff-83b7-1b7262269893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Contact.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Product.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Contact.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Product.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-accounting/src/main/resources/views/Product.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/service/EventServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/web/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/java/com/axelor/apps/events/web/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Contact.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Event.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/domains/Product.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Contact.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Contact.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Event.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/axelor-events/src/main/resources/views/Product.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/axelor-config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,7 +276,7 @@
       <workItem from="1700087021839" duration="57000" />
       <workItem from="1700142589294" duration="6275000" />
       <workItem from="1700170462052" duration="3504000" />
-      <workItem from="1700227401323" duration="6350000" />
+      <workItem from="1700227401323" duration="12572000" />
     </task>
     <servers />
   </component>

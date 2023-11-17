@@ -82,12 +82,12 @@ public class EventController {
         }
     }
 
-    public void setAssociatedTo(ActionRequest request, ActionResponse response) {
-        Event event = request.getContext().asType(Event.class);
-        EventService eventService = Beans.get(EventService.class);
-        eventService.setAssociatedTo(event);
-        response.setReload(true);
-    }
+//    public void setAssociatedTo(ActionRequest request, ActionResponse response) {
+//        Event event = request.getContext().asType(Event.class);
+//        EventService eventService = Beans.get(EventService.class);
+//        eventService.setAssociatedTo(event);
+//        response.setReload(true);
+//    }
 
 
 }

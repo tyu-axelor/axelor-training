@@ -21,9 +21,6 @@
         <string name="associatedToSelect" title="Associated to" selection="events.event.associated.to.select"/>
         <long name="associatedToSelectId"/>
 
-        <many-to-one name="product" ref="com.axelor.apps.sales.db.Product" title="product"/>
-        <many-to-one name="contact" ref="com.axelor.apps.contact.db.Contact" title="contact"/>
-
     </entity>
 
 
